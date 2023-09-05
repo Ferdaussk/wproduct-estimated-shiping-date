@@ -1,29 +1,29 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
-$wpesd_products_taxo_value = get_option( 'wpesd-check-products-taxo-widget', 'off' );//
+$wpesd_products_taxo_value = get_option( 'wpesd-check-products-taxo-widget', 'off' );
 // Taxos label check
-$wpesd_checkout_page_check = get_option( 'wpesd-checkout-page-check', 'on' );//
-$wpesd_thankyou_page_check = get_option( 'wpesd-thankyou-page-check', 'on' );//
-$wpesd_orderdate_thankyou_page_check = get_option( 'wpesd-orderdate-thankyou-page-check', 'off' );//
+$wpesd_checkout_page_check = get_option( 'wpesd-checkout-page-check', 'on' );
+$wpesd_thankyou_page_check = get_option( 'wpesd-thankyou-page-check', 'on' );
+$wpesd_orderdate_thankyou_page_check = get_option( 'wpesd-orderdate-thankyou-page-check', 'off' );
 // Label controls
 // *** estimass
-$wpesd_estimass_color_value = get_option( 'wpesd-estimass-color', 'red' );//
-$wpesd_estimass_fontsize_value = get_option( 'wpesd-estimass-fontsize');//
-$wpesd_estimass_fontweight_value = get_option( 'wpesd-estimass-fontweight');//
-$wpesd_estimass_fontfamilly_value = get_option( 'wpesd-estimass-fontfamilly', 'roboto' );//
+$wpesd_estimass_color_value = get_option( 'wpesd-estimass-color', 'red' );
+$wpesd_estimass_fontsize_value = get_option( 'wpesd-estimass-fontsize');
+$wpesd_estimass_fontweight_value = get_option( 'wpesd-estimass-fontweight');
+$wpesd_estimass_fontfamilly_value = get_option( 'wpesd-estimass-fontfamilly', 'roboto' );
 // *** estimdate
-$wpesd_product_shipted_value = get_option( 'wpesd-product-shipted', 'This product will be shipped in ');//
-$wpesd_notice_position_value = get_option( 'wpesd-notice-position', 'top' );//
+$wpesd_product_shipted_value = get_option( 'wpesd-product-shipted', 'This product will be shipped in ');
+$wpesd_notice_position_value = get_option( 'wpesd-notice-position', 'top' );
 // *** reson
-$wpesd_reson_color_value = get_option( 'wpesd-reson-color', 'red' );//
-$wpesd_reson_fontsize_value = get_option( 'wpesd-reson-fontsize', '20px');//
-$wpesd_reson_fontweight_value = get_option( 'wpesd-reson-fontweight');//
-$wpesd_reson_fontfamilly_value = get_option( 'wpesd-reson-fontfamilly', 'roboto' );//
+$wpesd_reson_color_value = get_option( 'wpesd-reson-color', 'red' );
+$wpesd_reson_fontsize_value = get_option( 'wpesd-reson-fontsize', '20px');
+$wpesd_reson_fontweight_value = get_option( 'wpesd-reson-fontweight');
+$wpesd_reson_fontfamilly_value = get_option( 'wpesd-reson-fontfamilly', 'roboto' );
 // *** estimdate
-$wpesd_estimdate_color_value = get_option( 'wpesd-estimdate-color', 'red' );//
-$wpesd_estimdate_fontsize_value = get_option( 'wpesd-estimdate-fontsize');//
-$wpesd_estimdate_fontweight_value = get_option( 'wpesd-estimdate-fontweight');//
-$wpesd_estimdate_fontfamilly_value = get_option( 'wpesd-estimdate-fontfamilly');//
+$wpesd_estimdate_color_value = get_option( 'wpesd-estimdate-color', 'red' );
+$wpesd_estimdate_fontsize_value = get_option( 'wpesd-estimdate-fontsize');
+$wpesd_estimdate_fontweight_value = get_option( 'wpesd-estimdate-fontweight');
+$wpesd_estimdate_fontfamilly_value = get_option( 'wpesd-estimdate-fontfamilly');
 
 ?>
 <div class="admin-panel">
