@@ -1,0 +1,266 @@
+a{
+  text-decoration: none;
+}
+#wpcontent{
+  background-color: white;
+}
+.admin-panel {
+padding: 20px;
+}
+
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #ccc;
+padding-bottom: 10px;
+margin-bottom: 20px;
+}
+
+.header h1 {
+font-size: 30px;
+margin: 0;
+height: 22px;
+background: linear-gradient(to right, #034494, #d20045, #ff9c4b);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.wp-core-ui .button-primary {
+padding: 8px 12px;
+background-color: #64a326;
+color: #fff;
+border: none;
+cursor: pointer;
+font-weight: 700;
+font-size: 15px;
+}
+.wp-core-ui .button-primary:hover, .wp-core-ui .button-primary:focus {
+padding: 8px 12px;
+background-color: #5c9623;
+color: #fff;
+border: none;
+cursor: pointer;
+font-weight: 700;
+font-size: 15px;
+border: none;
+}
+p.submit{
+  margin-top: 0;
+}
+.submit{
+  padding: 0;
+}
+.section, .secound-clm{
+display: flex;
+}
+.checker-wrap {
+width: 50%;
+}
+.first-clm {
+width: 30%;
+}
+.secound-clm {
+width: 70%;
+}
+.clmn-wrap {
+border: 1px solid #ccc;
+padding: 20px;
+}
+
+.toggle-container,
+.select-container {
+margin-bottom: 20px;
+}
+
+.toggle-label {
+display: block;
+font-weight: bold;
+margin-bottom: 8px;
+}
+
+.toggle-switch {
+position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
+}
+
+.toggle-switch input {
+display: none;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ff5e5e;
+transition: 0.4s;
+border-radius: 34px;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: 0.4s;
+border-radius: 50%;
+}
+
+input:checked + .slider {
+background-color: #208300;
+}
+
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+
+.select-container label {
+display: block;
+margin: 20px 0px 10px 0px;
+font-weight: 700;
+}
+.emessage-container input{
+  width: 100%;
+}
+.choose-page {
+display: block;
+margin: 20px 0px 10px 0px;
+font-weight: 700;
+}
+
+select {
+width: 100%;
+padding: 8px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+.list-container .list-item label{
+  padding: 10px;
+  font-weight: 600;
+}
+.list-item {
+  display: flex;
+  align-items: center;
+}
+.list-item {
+  flex: 1;
+  margin-right: 10px;
+}
+  
+.list-item label {
+  display: block;
+  margin-bottom: 5px;
+}
+.list-container.wpesd_cmmn_chacthak {
+  padding: 15px 0px;
+}
+
+
+/* For the secound collumn */
+/* Apply styles to the .secound-clm container */
+.section{
+  display: flex;
+}
+.secound-clm {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Apply styles to the .control_row containers */
+.secound-clm .control_row {
+  /* display: flex; */
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+/* Apply styles to the color-control elements */
+.secound-clm .color-control {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.secound-clm .color-control label {
+  display: block;
+  font-weight: bold;
+}
+
+.secound-clm .color-control input[type="color"] {
+  width: 100%;
+}
+
+/* Apply styles to the text-control elements */
+.secound-clm .text-control {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.secound-clm .text-control label {
+  display: block;
+  font-weight: bold;
+}
+
+.secound-clm .text-control input[type="text"] {
+  width: 100%;
+}
+
+/* Apply styles to the number-control elements */
+.secound-clm .number-control {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.secound-clm .number-control label {
+  display: block;
+  font-weight: bold;
+}
+
+.secound-clm .number-control input[type="number"] {
+  width: 100%;
+}
+
+/* Apply styles to the select-control elements */
+.secound-clm .select-control {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.secound-clm .select-control label {
+  display: block;
+  font-weight: bold;
+}
+
+.secound-clm .select-control select {
+  width: 100%;
+}
+.wpesd-style-style {
+  padding: 20px 20px;
+}
+.control_row .wpesd_style_title {
+  text-decoration: underline;
+  background: linear-gradient(to right, #034494, #d20045, #ff9c4b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.control_row label {
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 15px;
+}
+.secound-clm .control_row{
+  text-align: center;
+}

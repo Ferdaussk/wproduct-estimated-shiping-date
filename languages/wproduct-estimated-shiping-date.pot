@@ -1,0 +1,238 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: AA WProduct Estimated Shiping Date\n"
+"POT-Creation-Date: 2023-09-05 11:06+0600\n"
+"PO-Revision-Date: 2023-09-05 11:06+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: wproduct-estimated-shiping-date.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: dashboard/dashboard-style.php:35
+msgid "BEST WP DEVELOPER"
+msgstr ""
+
+#: dashboard/dashboard-style.php:46
+msgid "Active"
+msgstr ""
+
+#: dashboard/dashboard-style.php:53
+msgid "Reson notice position"
+msgstr ""
+
+#: dashboard/dashboard-style.php:55
+msgid "Top"
+msgstr ""
+
+#: dashboard/dashboard-style.php:56
+msgid "Bottom"
+msgstr ""
+
+#: dashboard/dashboard-style.php:60
+msgid "Estimated Message:"
+msgstr ""
+
+#: dashboard/dashboard-style.php:63
+msgid "Date format:"
+msgstr ""
+
+#: dashboard/dashboard-style.php:68
+msgid "F j, Y => November 6, 2023 "
+msgstr ""
+
+#: dashboard/dashboard-style.php:73
+msgid "F, Y => November, 2023"
+msgstr ""
+
+#: dashboard/dashboard-style.php:78
+msgid "M j, Y => Nov 6, 2023"
+msgstr ""
+
+#: dashboard/dashboard-style.php:83
+msgid "Y/m/d => 2023/11/06"
+msgstr ""
+
+#: dashboard/dashboard-style.php:88
+msgid "Show in chackout page"
+msgstr ""
+
+#: dashboard/dashboard-style.php:92
+msgid "Show in thankYou Page"
+msgstr ""
+
+#: dashboard/dashboard-style.php:96
+msgid "Show order date in thankYou page"
+msgstr ""
+
+#: dashboard/dashboard-style.php:101
+msgid "Estimated Message"
+msgstr ""
+
+#: dashboard/dashboard-style.php:103 dashboard/dashboard-style.php:128
+#: dashboard/dashboard-style.php:153
+msgid "Color"
+msgstr ""
+
+#: dashboard/dashboard-style.php:107 dashboard/dashboard-style.php:132
+#: dashboard/dashboard-style.php:157
+msgid "Font size"
+msgstr ""
+
+#: dashboard/dashboard-style.php:111 dashboard/dashboard-style.php:136
+#: dashboard/dashboard-style.php:161
+msgid "Font weight"
+msgstr ""
+
+#: dashboard/dashboard-style.php:115 dashboard/dashboard-style.php:140
+#: dashboard/dashboard-style.php:165
+msgid "Font family"
+msgstr ""
+
+#: dashboard/dashboard-style.php:117 dashboard/dashboard-style.php:142
+#: dashboard/dashboard-style.php:167
+msgid "Roboto - Sans-serif"
+msgstr ""
+
+#: dashboard/dashboard-style.php:118 dashboard/dashboard-style.php:143
+#: dashboard/dashboard-style.php:168
+msgid "Open Sans - Sans-serif"
+msgstr ""
+
+#: dashboard/dashboard-style.php:119 dashboard/dashboard-style.php:144
+#: dashboard/dashboard-style.php:169
+msgid "Lato - Sans-serif"
+msgstr ""
+
+#: dashboard/dashboard-style.php:120 dashboard/dashboard-style.php:145
+#: dashboard/dashboard-style.php:170
+msgid "Montserrat - Sans-serif"
+msgstr ""
+
+#: dashboard/dashboard-style.php:121 dashboard/dashboard-style.php:146
+#: dashboard/dashboard-style.php:171
+msgid "Nunito - Sans-serif"
+msgstr ""
+
+#: dashboard/dashboard-style.php:126
+msgid "Date"
+msgstr ""
+
+#: dashboard/dashboard-style.php:151
+msgid "Reson"
+msgstr ""
+
+#: dashboard/requires-check.php:18 dashboard/requires-check.php:25
+#: inc/requires-check.php:18 inc/requires-check.php:25
+#: wproduct-estimated-shiping-date.php:70
+msgid "WProduct Estimated Shiping Date"
+msgstr ""
+
+#: dashboard/requires-check.php:18 inc/requires-check.php:18
+msgid "requires WooCommerce to be activated."
+msgstr ""
+
+#: dashboard/requires-check.php:19 inc/requires-check.php:19
+msgid "Activate WooCommerce"
+msgstr ""
+
+#: dashboard/requires-check.php:25 inc/requires-check.php:25
+msgid "requires WooCommerce to be installed and activated."
+msgstr ""
+
+#: dashboard/requires-check.php:26 inc/requires-check.php:26
+msgid "Install WooCommerce"
+msgstr ""
+
+#: prod-ready.php:130
+msgid "Settings"
+msgstr ""
+
+#: prod-ready.php:138
+msgid "Product estimated date"
+msgstr ""
+
+#: prod-ready.php:153
+msgid "Estimated date"
+msgstr ""
+
+#: prod-ready.php:154
+msgid "Show estimated date for this product."
+msgstr ""
+
+#: prod-ready.php:162
+msgid "Day number"
+msgstr ""
+
+#: prod-ready.php:163
+msgid "Enter estimated day"
+msgstr ""
+
+#: prod-ready.php:175
+msgid "Reson notice"
+msgstr ""
+
+#: prod-ready.php:176
+msgid "Enter reson. If don't have empty this."
+msgstr ""
+
+#: prod-ready.php:375
+msgid "Order Number"
+msgstr ""
+
+#: prod-ready.php:411
+msgid "Product Name"
+msgstr ""
+
+#: prod-ready.php:435
+msgid " "
+msgstr ""
+
+#: wproduct-estimated-shiping-date.php:69
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr ""
+
+#: wproduct-estimated-shiping-date.php:71
+msgid "PHP"
+msgstr ""
+
+#: wproduct-estimated-shiping-date.php:75
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "AA WProduct Estimated Shiping Date"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://bestwpdeveloper.com/wproduct-estimated-shiping-date/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"The WProduct Estimated Shiping Date plugin enhances your WooCommerce-powered "
+"online store by seamlessly integrating product taxonomy data into both the "
+"shop page and individual product pages."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Best WP Developer"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://bestwpdeveloper.com"
+msgstr ""

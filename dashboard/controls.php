@@ -1,0 +1,922 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+add_settings_field(
+  'wpesd-check-products-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-pagechack-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-position-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+// Taxos
+add_settings_field(
+  'wpesd-check-estimass-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-estimdate-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-reson-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-weight-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-dimensions-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-stock-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-sku-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-date-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-slug-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-featured-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-reviews-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-shippingclass-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+
+// Taxos label check
+add_settings_field(
+  'wpesd-checkout-page-check',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-thankyou-page-check',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-orderdate-thankyou-page-check',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-orderdate-checkout-page-check',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-label-check-dimensions-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-label-check-stock-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-label-check-sku-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-label-check-date-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-label-check-slug-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-label-check-featured-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-label-check-reviews-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-label-check-shippingclass-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+
+// Popup controls
+// *** Price
+add_settings_field(
+  'wpesd-estimass-text',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-estimass-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-estimass-fontsize',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-estimass-fontweight',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-estimass-fontfamilly',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+// *** estimdate
+add_settings_field(
+  'wpesd-estimdate-text',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-estimdate-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-product-shipted',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-notice-position',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+// *** reson
+add_settings_field(
+  'wpesd-reson-text',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-reson-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-reson-fontsize',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-reson-fontweight',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-reson-fontfamilly',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+// *** weight
+add_settings_field(
+  'wpesd-weight-text',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-weight-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-weight-fontsize',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-weight-fontfamilly',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+// *** dimensions
+add_settings_field(
+  'wpesd-estimdate-fontsize',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-estimdate-fontweight',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-estimdate-fontfamilly',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+
+
+add_settings_field(
+  'wpesd-dimensions-text',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-dimensions-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-dimensions-fontsize',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-dimensions-fontfamilly',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+// *** stock
+add_settings_field(
+  'wpesd-stock-text',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-stock-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-stock-fontsize',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-stock-fontfamilly',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+// *** sku
+add_settings_field(
+  'wpesd-sku-text',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-sku-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-sku-fontsize',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-sku-fontfamilly',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+// *** date
+add_settings_field(
+  'wpesd-date-text',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-date-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-date-fontsize',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-date-fontfamilly',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+// *** slug
+add_settings_field(
+  'wpesd-slug-text',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-slug-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-slug-fontsize',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-slug-fontfamilly',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+// *** featured
+add_settings_field(
+  'wpesd-featured-text',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-featured-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-featured-fontsize',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-featured-fontfamilly',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+// *** reviews
+add_settings_field(
+  'wpesd-reviews-text',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-reviews-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-reviews-fontsize',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-reviews-fontfamilly',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+// *** shippingclass
+add_settings_field(
+  'wpesd-shippingclass-text',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-shippingclass-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-shippingclass-fontsize',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-shippingclass-fontfamilly',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+
+// Register Settings all
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-products-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-pagechack-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-position-taxo-widget' 
+);
+// Taxos
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-estimass-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-estimdate-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-reson-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-weight-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-dimensions-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-stock-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-sku-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-date-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-slug-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-featured-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-reviews-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-check-shippingclass-taxo-widget' 
+);
+
+// Taxos label check
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-checkout-page-check' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-thankyou-page-check' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-orderdate-thankyou-page-check' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-orderdate-checkout-page-check' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-label-check-dimensions-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-label-check-stock-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-label-check-sku-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-label-check-date-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-label-check-slug-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-label-check-featured-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-label-check-reviews-taxo-widget' 
+);
+register_setting( 
+  'wpesd-plugin-settings', 
+  'wpesd-label-check-shippingclass-taxo-widget' 
+);
+
+// Popup controls
+// *** Price
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-estimass-text'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-estimass-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-estimass-fontsize'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-estimass-fontweight'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-estimass-fontfamilly'
+);
+// *** estimdate
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-estimdate-text'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-estimdate-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-product-shipted'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-notice-position'
+);
+// *** reson
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-reson-text'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-reson-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-reson-fontsize'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-reson-fontweight'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-reson-fontfamilly'
+);
+// *** weight
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-weight-text'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-weight-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-weight-fontsize'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-weight-fontfamilly'
+);
+// *** estimdate
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-estimdate-fontsize'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-estimdate-fontweight'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-estimdate-fontfamilly'
+);
+
+
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-dimensions-text'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-dimensions-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-dimensions-fontsize'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-dimensions-fontfamilly'
+);
+// *** stock
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-stock-text'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-stock-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-stock-fontsize'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-stock-fontfamilly'
+);
+// *** sku
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-sku-text'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-sku-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-sku-fontsize'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-sku-fontfamilly'
+);
+// *** date
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-date-text'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-date-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-date-fontsize'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-date-fontfamilly'
+);
+// *** slug
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-slug-text'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-slug-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-slug-fontsize'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-slug-fontfamilly'
+);
+// *** featured
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-featured-text'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-featured-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-featured-fontsize'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-featured-fontfamilly'
+);
+// *** reviews
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-reviews-text'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-reviews-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-reviews-fontsize'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-reviews-fontfamilly'
+);
+// *** shippingclass
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-shippingclass-text'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-shippingclass-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-shippingclass-fontsize'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-shippingclass-fontfamilly'
+);
