@@ -61,6 +61,10 @@ class ClassProdWPESD {
 
     public function wpesd_plugin_settings_to_whitelist( $options ) {
       $options['wpesd-plugin-settings'] = array(
+        'wpesd-check-products-taxo-widget',
+        'wpesd-checkout-page-check',
+        'wpesd-thankyou-page-check',
+        'wpesd-orderdate-thankyou-page-check',
         // *** reson
         'wpesd-reson-color',
         'wpesd-reson-fontsize',
@@ -78,11 +82,6 @@ class ClassProdWPESD {
         'wpesd-estimass-fontfamilly',
       );
       return $options;
-    }
-
-    public function custom_content_before_add_to_cart_button() {
-        global $product;
-        // include 'public-inc/taxo-template.php';
     }
 
     public function wpesd_taxoes_styles(){

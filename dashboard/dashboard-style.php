@@ -14,6 +14,7 @@ $wpesd_estimass_fontfamilly_value = get_option( 'wpesd-estimass-fontfamilly', 'r
 // *** estimdate
 $wpesd_product_shipted_value = get_option( 'wpesd-product-shipted', 'This product will be shipped in ');
 $wpesd_notice_position_value = get_option( 'wpesd-notice-position', 'top' );
+$wpesd_pagechack_value = get_option( 'wpesd-check-pagechack-taxo-widget', 'M j, Y' );
 // *** reson
 $wpesd_reson_color_value = get_option( 'wpesd-reson-color', 'red' );
 $wpesd_reson_fontsize_value = get_option( 'wpesd-reson-fontsize', '20px');
