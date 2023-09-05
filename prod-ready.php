@@ -65,11 +65,11 @@ class ClassProdWPESD {
         'wpesd-checkout-page-check',
         'wpesd-thankyou-page-check',
         'wpesd-orderdate-thankyou-page-check',
-        // *** reson
-        'wpesd-reson-color',
-        'wpesd-reson-fontsize',
-        'wpesd-reson-fontweight',
-        'wpesd-reson-fontfamilly',
+        // *** reason
+        'wpesd-reason-color',
+        'wpesd-reason-fontsize',
+        'wpesd-reason-fontweight',
+        'wpesd-reason-fontfamilly',
         // *** estimdate
         'wpesd-estimdate-color',
         'wpesd-estimdate-fontsize',
@@ -85,11 +85,11 @@ class ClassProdWPESD {
     }
 
     public function wpesd_taxoes_styles(){
-        // *** reson
-        $wpesd_reson_color_value = get_option( 'wpesd-reson-color', 'black' );
-        $wpesd_reson_fontsize_value = get_option( 'wpesd-reson-fontsize', '10px');
-        $wpesd_reson_fontweight_value = get_option( 'wpesd-reson-fontweight');
-        $wpesd_reson_fontfamilly_value = get_option( 'wpesd-reson-fontfamilly', 'roboto' );
+        // *** reason
+        $wpesd_reason_color_value = get_option( 'wpesd-reason-color', 'black' );
+        $wpesd_reason_fontsize_value = get_option( 'wpesd-reason-fontsize', '10px');
+        $wpesd_reason_fontweight_value = get_option( 'wpesd-reason-fontweight');
+        $wpesd_reason_fontfamilly_value = get_option( 'wpesd-reason-fontfamilly', 'roboto' );
         // *** estimdate
         $wpesd_estimdate_color_value = get_option( 'wpesd-estimdate-color', 'black' );
         $wpesd_estimdate_fontsize_value = get_option( 'wpesd-estimdate-fontsize', '10px');
@@ -101,11 +101,11 @@ class ClassProdWPESD {
         $wpesd_estimass_fontweight_value = get_option( 'wpesd-estimass-fontweight');
         $wpesd_estimass_fontfamilly_value = get_option( 'wpesd-estimass-fontfamilly', 'roboto' );
         $html = "<style>
-        .show_reson_notice{
-            color:{$wpesd_reson_color_value};
-            font-size:{$wpesd_reson_fontsize_value};
-            font-weight:{$wpesd_reson_fontweight_value};
-            font-family:{$wpesd_reson_fontfamilly_value};
+        .show_reason_notice{
+            color:{$wpesd_reason_color_value};
+            font-size:{$wpesd_reason_fontsize_value};
+            font-weight:{$wpesd_reason_fontweight_value};
+            font-family:{$wpesd_reason_fontfamilly_value};
         }
         .estimdate-style{
             color:{$wpesd_estimdate_color_value};
@@ -167,12 +167,12 @@ class ClassProdWPESD {
                     ),
                 )
             );
-            // Reson notice Input
+            // Reason notice Input
             woocommerce_wp_text_input(
                 array(
                     'id'            => '_custom_notice',
-                    'label'         => __('Reson notice', 'wproduct-estimated-shiping-date'),
-                    'placeholder'   => __('Enter reson. If don\'t have empty this.', 'wproduct-estimated-shiping-date'),
+                    'label'         => __('Reason notice', 'wproduct-estimated-shiping-date'),
+                    'placeholder'   => __('Enter reason. If don\'t have empty this.', 'wproduct-estimated-shiping-date'),
                     'desc_tip'      => true,
                     'type'          => 'text',
                     'custom_attributes' => array(
@@ -218,9 +218,9 @@ class ClassProdWPESD {
                         if($product_id == $wpesd_each_id){
                             if(get_option('wpesd-notice-position') == 'bottom'){ 
                             echo '<div class="show_plus_day_date estimass-style">' . esc_html__($Estimated_message_text).'<span class="estimdate-style"> '.esc_html__($target_date).'</span></div>';
-                            echo (!empty($custom_notice_value))?'<div class="show_reson_notice">'.esc_html__($custom_notice_value).'</div>':'';
+                            echo (!empty($custom_notice_value))?'<div class="show_reason_notice">'.esc_html__($custom_notice_value).'</div>':'';
                             }else{
-                                echo (!empty($custom_notice_value))?'<div class="show_reson_notice">' . esc_html__($custom_notice_value) . '</div>':'';
+                                echo (!empty($custom_notice_value))?'<div class="show_reason_notice">' . esc_html__($custom_notice_value) . '</div>':'';
                                 echo '<div class="show_plus_day_date estimass-style">' . esc_html__($Estimated_message_text).' <span class="estimdate-style">'.esc_html__($target_date) . '</span></div>';
                             }
                         }
@@ -255,9 +255,9 @@ class ClassProdWPESD {
                         if($product_id == $wpesd_each_id){
                             if(get_option('wpesd-notice-position') == 'bottom'){ 
                             echo '<div class="show_plus_day_date estimass-style">' . esc_html__($Estimated_message_text).'<span class="estimdate-style"> '.esc_html__($target_date).'</span></div>';
-                            echo (!empty($custom_notice_value))?'<div class="show_reson_notice">'.esc_html__($custom_notice_value).'</div>':'';
+                            echo (!empty($custom_notice_value))?'<div class="show_reason_notice">'.esc_html__($custom_notice_value).'</div>':'';
                             }else{
-                                echo (!empty($custom_notice_value))?'<div class="show_reson_notice">' . esc_html__($custom_notice_value) . '</div>':'';
+                                echo (!empty($custom_notice_value))?'<div class="show_reason_notice">' . esc_html__($custom_notice_value) . '</div>':'';
                                 echo '<div class="show_plus_day_date estimass-style">' . esc_html__($Estimated_message_text).' <span class="estimdate-style">'.esc_html__($target_date) . '</span></div>';
                             }
                         }
@@ -292,9 +292,9 @@ class ClassProdWPESD {
                         if($product_id == $wpesd_each_id){
                             if(get_option('wpesd-notice-position') == 'bottom'){ 
                             echo '<div class="show_plus_day_date estimass-style">' . esc_html__($Estimated_message_text).'<span class="estimdate-style"> '.esc_html__($target_date).'</span></div>';
-                            echo (!empty($custom_notice_value))?'<div class="show_reson_notice">'.esc_html__($custom_notice_value).'</div>':'';
+                            echo (!empty($custom_notice_value))?'<div class="show_reason_notice">'.esc_html__($custom_notice_value).'</div>':'';
                             }else{
-                                echo (!empty($custom_notice_value))?'<div class="show_reson_notice">' . esc_html__($custom_notice_value) . '</div>':'';
+                                echo (!empty($custom_notice_value))?'<div class="show_reason_notice">' . esc_html__($custom_notice_value) . '</div>':'';
                                 echo '<div class="show_plus_day_date estimass-style">' . esc_html__($Estimated_message_text).' <span class="estimdate-style">'.esc_html__($target_date) . '</span></div>';
                             }
                         }

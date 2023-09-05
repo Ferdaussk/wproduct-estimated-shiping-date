@@ -15,11 +15,11 @@ $wpesd_estimass_fontfamilly_value = get_option( 'wpesd-estimass-fontfamilly', 'r
 $wpesd_product_shipted_value = get_option( 'wpesd-product-shipted', 'This product will be shipped in ');
 $wpesd_notice_position_value = get_option( 'wpesd-notice-position', 'top' );
 $wpesd_pagechack_value = get_option( 'wpesd-check-pagechack-taxo-widget', 'M j, Y' );
-// *** reson
-$wpesd_reson_color_value = get_option( 'wpesd-reson-color', 'red' );
-$wpesd_reson_fontsize_value = get_option( 'wpesd-reson-fontsize', '20px');
-$wpesd_reson_fontweight_value = get_option( 'wpesd-reson-fontweight');
-$wpesd_reson_fontfamilly_value = get_option( 'wpesd-reson-fontfamilly', 'roboto' );
+// *** reason
+$wpesd_reason_color_value = get_option( 'wpesd-reason-color', 'red' );
+$wpesd_reason_fontsize_value = get_option( 'wpesd-reason-fontsize', '20px');
+$wpesd_reason_fontweight_value = get_option( 'wpesd-reason-fontweight');
+$wpesd_reason_fontfamilly_value = get_option( 'wpesd-reason-fontfamilly', 'roboto' );
 // *** estimdate
 $wpesd_estimdate_color_value = get_option( 'wpesd-estimdate-color', 'red' );
 $wpesd_estimdate_fontsize_value = get_option( 'wpesd-estimdate-fontsize');
@@ -51,7 +51,7 @@ $wpesd_estimdate_fontfamilly_value = get_option( 'wpesd-estimdate-fontfamilly');
           </label>
         </div>
         <div class="select-container">
-          <label for=""><?php _e('Reson notice position', 'wproduct-estimated-shiping-date'); ?></label>
+          <label for=""><?php _e('Reason notice position', 'wproduct-estimated-shiping-date'); ?></label>
           <select name="wpesd-notice-position">
             <option value="top" <?php selected($wpesd_notice_position_value, 'top'); ?>><?php _e('Top', 'wproduct-estimated-shiping-date'); ?></option>
             <option value="bottom" <?php selected($wpesd_notice_position_value, 'bottom'); ?>><?php _e('Bottom', 'wproduct-estimated-shiping-date'); ?></option>
@@ -86,15 +86,15 @@ $wpesd_estimdate_fontfamilly_value = get_option( 'wpesd-estimdate-fontfamilly');
         </div>
         <div class="list-container wpesd_cmmn_chacthak">
           <input type="checkbox" name="wpesd-checkout-page-check" value="on" <?php echo checked( $wpesd_checkout_page_check, 'on', false ); ?>>
-          <label class="checker-switch"><?php _e('Show in chackout page', 'wproduct-estimated-shiping-date'); ?></label>
+          <label class="checker-switch"><?php _e('Show in checkout page', 'wproduct-estimated-shiping-date'); ?></label>
         </div>
         <div class="list-container wpesd_cmmn_chacthak">
           <input type="checkbox" name="wpesd-thankyou-page-check" value="on" <?php echo checked( $wpesd_thankyou_page_check, 'on', false ); ?>>
-          <label class="checker-switch"><?php _e('Show in thankYou Page', 'wproduct-estimated-shiping-date'); ?></label>
+          <label class="checker-switch"><?php _e('Show in thank you Page', 'wproduct-estimated-shiping-date'); ?></label>
         </div>
         <div class="list-container wpesd_cmmn_chacthak">
           <input type="checkbox" name="wpesd-orderdate-thankyou-page-check" value="off" <?php echo checked( $wpesd_orderdate_thankyou_page_check, 'off', false ); ?>>
-          <label class="checker-switch"><?php _e('Show order date in thankYou page', 'wproduct-estimated-shiping-date'); ?></label>
+          <label class="checker-switch"><?php _e('Show order date in thank you page', 'wproduct-estimated-shiping-date'); ?></label>
         </div>
       </div>
       <div class="clmn-wrap secound-clm">
@@ -149,27 +149,27 @@ $wpesd_estimdate_fontfamilly_value = get_option( 'wpesd-estimdate-fontfamilly');
           </div>
         </div>
         <div class="control_row">
-        <label for="" class="wpesd_style_title"><?php _e('Reson', 'wproduct-estimated-shiping-date');?></label>
+        <label for="" class="wpesd_style_title"><?php _e('Reason', 'wproduct-estimated-shiping-date');?></label>
           <div class="color-control wpesd-style-style">
             <label for=""><?php _e('Color', 'wproduct-estimated-shiping-date');?></label>
-            <?php echo '<input type="color" name="wpesd-reson-color" id="wpesd-reson-color" value="'.$wpesd_reson_color_value.'" title="Text">';?>
+            <?php echo '<input type="color" name="wpesd-reason-color" id="wpesd-reason-color" value="'.$wpesd_reason_color_value.'" title="Text">';?>
           </div>
           <div class="text-control wpesd-style-style">
             <label for=""><?php _e('Font size', 'wproduct-estimated-shiping-date');?></label>
-            <?php echo '<input type="text" name="wpesd-reson-fontsize" id="wpesd-reson-fontsize" value="'.$wpesd_reson_fontsize_value.'" title="10px"  placeholder="px, %, rem">';?>
+            <?php echo '<input type="text" name="wpesd-reason-fontsize" id="wpesd-reason-fontsize" value="'.$wpesd_reason_fontsize_value.'" title="10px"  placeholder="px, %, rem">';?>
           </div>
           <div class="number-control wpesd-style-style">
             <label for=""><?php _e('Font weight', 'wproduct-estimated-shiping-date');?></label>
-            <?php echo '<input type="text" name="wpesd-reson-fontweight" id="wpesd-reson-fontweight" value="'.$wpesd_reson_fontweight_value.'" title="Number"  placeholder="400">';?>
+            <?php echo '<input type="text" name="wpesd-reason-fontweight" id="wpesd-reason-fontweight" value="'.$wpesd_reason_fontweight_value.'" title="Number"  placeholder="400">';?>
           </div>
           <div class="select-control wpesd-style-style">
             <label for=""><?php _e('Font family', 'wproduct-estimated-shiping-date');?></label>
-            <select name="wpesd-reson-fontfamilly">
-              <option value="roboto" <?php selected($wpesd_reson_fontfamilly_value, 'roboto'); ?>><?php _e('Roboto - Sans-serif', 'wproduct-estimated-shiping-date'); ?></option>
-              <option value="open-sans" <?php selected($wpesd_reson_fontfamilly_value, 'open-sans'); ?>><?php _e('Open Sans - Sans-serif', 'wproduct-estimated-shiping-date'); ?></option>
-              <option value="lato" <?php selected($wpesd_reson_fontfamilly_value, 'lato'); ?>><?php _e('Lato - Sans-serif', 'wproduct-estimated-shiping-date'); ?></option>
-              <option value="montserrat" <?php selected($wpesd_reson_fontfamilly_value, 'montserrat'); ?>><?php _e('Montserrat - Sans-serif', 'wproduct-estimated-shiping-date'); ?></option>
-              <option value="nunito" <?php selected($wpesd_reson_fontfamilly_value, 'nunito'); ?>><?php _e('Nunito - Sans-serif', 'wproduct-estimated-shiping-date'); ?></option>
+            <select name="wpesd-reason-fontfamilly">
+              <option value="roboto" <?php selected($wpesd_reason_fontfamilly_value, 'roboto'); ?>><?php _e('Roboto - Sans-serif', 'wproduct-estimated-shiping-date'); ?></option>
+              <option value="open-sans" <?php selected($wpesd_reason_fontfamilly_value, 'open-sans'); ?>><?php _e('Open Sans - Sans-serif', 'wproduct-estimated-shiping-date'); ?></option>
+              <option value="lato" <?php selected($wpesd_reason_fontfamilly_value, 'lato'); ?>><?php _e('Lato - Sans-serif', 'wproduct-estimated-shiping-date'); ?></option>
+              <option value="montserrat" <?php selected($wpesd_reason_fontfamilly_value, 'montserrat'); ?>><?php _e('Montserrat - Sans-serif', 'wproduct-estimated-shiping-date'); ?></option>
+              <option value="nunito" <?php selected($wpesd_reason_fontfamilly_value, 'nunito'); ?>><?php _e('Nunito - Sans-serif', 'wproduct-estimated-shiping-date'); ?></option>
             </select>
           </div>
         </div>

@@ -67,28 +67,28 @@ add_settings_field(
   'wpesd-plugin-switch-section'
 );
 add_settings_field(
-  'wpesd-reson-color',
+  'wpesd-reason-color',
   '',
   'wpesd_plugin_function_for_datas_callback',
   'wpesd-plugin-main-menu',
   'wpesd-plugin-switch-section'
 );
 add_settings_field(
-  'wpesd-reson-fontsize',
+  'wpesd-reason-fontsize',
   '',
   'wpesd_plugin_function_for_datas_callback',
   'wpesd-plugin-main-menu',
   'wpesd-plugin-switch-section'
 );
 add_settings_field(
-  'wpesd-reson-fontweight',
+  'wpesd-reason-fontweight',
   '',
   'wpesd_plugin_function_for_datas_callback',
   'wpesd-plugin-main-menu',
   'wpesd-plugin-switch-section'
 );
 add_settings_field(
-  'wpesd-reson-fontfamilly',
+  'wpesd-reason-fontfamilly',
   '',
   'wpesd_plugin_function_for_datas_callback',
   'wpesd-plugin-main-menu',
@@ -158,22 +158,22 @@ register_setting(
   'wpesd-plugin-settings',
   'wpesd-estimdate-color'
 );
-// *** reson
+// *** reason
 register_setting(
   'wpesd-plugin-settings',
-  'wpesd-reson-color'
+  'wpesd-reason-color'
 );
 register_setting(
   'wpesd-plugin-settings',
-  'wpesd-reson-fontsize'
+  'wpesd-reason-fontsize'
 );
 register_setting(
   'wpesd-plugin-settings',
-  'wpesd-reson-fontweight'
+  'wpesd-reason-fontweight'
 );
 register_setting(
   'wpesd-plugin-settings',
-  'wpesd-reson-fontfamilly'
+  'wpesd-reason-fontfamilly'
 );
 // *** estimdate
 register_setting(
