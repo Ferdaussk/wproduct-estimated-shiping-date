@@ -14,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       WProduct Estimated Shiping Date
  * Plugin URI:        https://bestwpdeveloper.com/wproduct-estimated-shiping-date/
- * Description:       The WProduct Estimated Shiping Date plugin enhances your WooCommerce-powered online store by seamlessly integrating product taxonomy data into both the shop page and individual product pages.
+ * Description:       Add real-time estimated shipping dates to your WooCommerce store, keeping your customers informed and satisfied with accurate delivery predictions.
  * Version:           1.0
  * Author:            Best WP Developer
  * Author URI:        https://bestwpdeveloper.com
