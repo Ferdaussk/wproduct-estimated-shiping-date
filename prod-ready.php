@@ -61,10 +61,16 @@ class ClassProdWPESD {
 
     public function wpesd_plugin_settings_to_whitelist( $options ) {
       $options['wpesd-plugin-settings'] = array(
-        'wpesd-check-products-taxo-widget',
+        'wpesd-notice-position',
+        'wpesd-product-shipted',
+        'wpesd-product-shipted',
+        'wpesd-shipping-icon',
+        'wpesd-shipimgsize-check',
+        'wpesd-check-pagechack-taxo-widget',
         'wpesd-checkout-page-check',
         'wpesd-thankyou-page-check',
         'wpesd-orderdate-thankyou-page-check',
+        'wpesd-send-date-email',
         // *** reason
         'wpesd-reason-color',
         'wpesd-reason-fontsize',
@@ -87,19 +93,22 @@ class ClassProdWPESD {
     public function wpesd_taxoes_styles(){
         // *** reason
         $wpesd_reason_color_value = get_option( 'wpesd-reason-color', 'black' );
-        $wpesd_reason_fontsize_value = get_option( 'wpesd-reason-fontsize', '10px');
+        $wpesd_reason_bgcolor_value = get_option( 'wpesd-reason-bgcolor', '#ffe300' );
+        $wpesd_reason_fontsize_value = get_option( 'wpesd-reason-fontsize', '20px');
         $wpesd_reason_fontweight_value = get_option( 'wpesd-reason-fontweight');
         $wpesd_reason_fontfamilly_value = get_option( 'wpesd-reason-fontfamilly', 'roboto' );
         // *** estimdate
-        $wpesd_estimdate_color_value = get_option( 'wpesd-estimdate-color', 'black' );
-        $wpesd_estimdate_fontsize_value = get_option( 'wpesd-estimdate-fontsize', '10px');
+        $wpesd_estimdate_color_value = get_option( 'wpesd-estimdate-color', 'red' );
+        $wpesd_estimdate_fontsize_value = get_option( 'wpesd-estimdate-fontsize', '20px');
         $wpesd_estimdate_fontweight_value = get_option( 'wpesd-estimdate-fontweight');
         $wpesd_estimdate_fontfamilly_value = get_option( 'wpesd-estimdate-fontfamilly', 'roboto' );
         // *** estimass
         $wpesd_estimass_color_value = get_option( 'wpesd-estimass-color', 'black' );
-        $wpesd_estimass_fontsize_value = get_option( 'wpesd-estimass-fontsize', '10px');
+        $wpesd_estimass_bgcolor_value = get_option( 'wpesd-estimass-bgcolor', '#ffe300' );
+        $wpesd_estimass_fontsize_value = get_option( 'wpesd-estimass-fontsize', '20px');
         $wpesd_estimass_fontweight_value = get_option( 'wpesd-estimass-fontweight');
         $wpesd_estimass_fontfamilly_value = get_option( 'wpesd-estimass-fontfamilly', 'roboto' );
+        $wpesd_shipimgsize_value = get_option( 'wpesd-shipimgsize-check', '40px');
         $html = "<style>
         .show_reason_notice{
             color:{$wpesd_reason_color_value};
@@ -118,6 +127,12 @@ class ClassProdWPESD {
             font-size:{$wpesd_estimass_fontsize_value};
             font-weight:{$wpesd_estimass_fontweight_value};
             font-family:{$wpesd_estimass_fontfamilly_value};
+        }
+        .show_plus_day_date img, .estimass-style img{
+            width:{$wpesd_shipimgsize_value};
+        }
+        .show_plus_day_date.estimass-style, .estimass-style, .show_reason_notice{
+            background-color:{$wpesd_estimass_bgcolor_value};
         }
         ";
         $html .= '</style>';
@@ -196,7 +211,6 @@ class ClassProdWPESD {
     }
 
     public function wpesd_shop_page($cart_item){
-        if(get_option( 'wpesd-check-products-taxo-widget', 'off' ) == true){
         $wpesd_each_id = get_the_id();
         $args = array(
             'post_type'      => 'product',
@@ -209,31 +223,32 @@ class ClassProdWPESD {
                 $custom_checkbox_value = get_post_meta($product_id, '_custom_checkbox', true);
                 $custom_number_value = get_post_meta($product_id, '_custom_number', true);
                 $custom_notice_value = get_post_meta($product_id, '_custom_notice', true);
-                $Estimated_message_text = get_option('wpesd-product-shipted', 'This product will be shipped in ');
+                $Estimated_message_text = get_option('wpesd-product-shipted', 'This product will be shipped on ');
                 if ($custom_checkbox_value === 'yes') {
                 echo '<div class="show_/_">';
                     if ($custom_number_value !== '') {
                         $today = new \DateTime();
                         $target_date = $today->modify("+$custom_number_value days")->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y'));
                         if($product_id == $wpesd_each_id){
+                            $wpesd_shipping_icon = '<img src="'.get_option('wpesd-shipping-icon', plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png').'" atr="Image">';
+                            $wpesd_shipping_checkIcon = (!empty(get_option('wpesd-shipping-icon',plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png')))?$wpesd_shipping_icon:'';
+                            $wpesd_shipping_checkIcon = (!empty(get_option('wpesd-shipping-icon',plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png')))?$wpesd_shipping_icon:'';
                             if(get_option('wpesd-notice-position') == 'bottom'){ 
-                            echo '<div class="show_plus_day_date estimass-style">' . esc_html__($Estimated_message_text).'<span class="estimdate-style"> '.esc_html__($target_date).'</span></div>';
+                            echo '<div class="show_plus_day_date estimass-style">' .$wpesd_shipping_checkIcon.esc_html__($Estimated_message_text).'<span class="estimdate-style"> '.esc_html__($target_date).'</span></div>';
                             echo (!empty($custom_notice_value))?'<div class="show_reason_notice">'.esc_html__($custom_notice_value).'</div>':'';
                             }else{
                                 echo (!empty($custom_notice_value))?'<div class="show_reason_notice">' . esc_html__($custom_notice_value) . '</div>':'';
-                                echo '<div class="show_plus_day_date estimass-style">' . esc_html__($Estimated_message_text).' <span class="estimdate-style">'.esc_html__($target_date) . '</span></div>';
+                                echo '<div class="show_plus_day_date estimass-style">' .$wpesd_shipping_checkIcon.esc_html__($Estimated_message_text).' <span class="estimdate-style">'.esc_html__($target_date) . '</span></div>';
                             }
                         }
                     }
                 echo '</div>';
                 }
             }
-        }
         }
     }
 
     public function wpesd_archive_page($cart_item){
-        if(get_option( 'wpesd-check-products-taxo-widget', 'off' ) == true){
         $wpesd_each_id = get_the_id();
         $args = array(
             'post_type'      => 'product',
@@ -246,19 +261,21 @@ class ClassProdWPESD {
                 $custom_checkbox_value = get_post_meta($product_id, '_custom_checkbox', true);
                 $custom_number_value = get_post_meta($product_id, '_custom_number', true);
                 $custom_notice_value = get_post_meta($product_id, '_custom_notice', true);
-                $Estimated_message_text = get_option('wpesd-product-shipted', 'This product will be shipped in ');
+                $Estimated_message_text = get_option('wpesd-product-shipted', 'This product will be shipped on ');
                 if ($custom_checkbox_value === 'yes') {
                 echo '<div class="show_/_">';
                     if ($custom_number_value !== '') {
                         $today = new \DateTime();
                         $target_date = $today->modify("+$custom_number_value days")->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y'));
                         if($product_id == $wpesd_each_id){
+                            $wpesd_shipping_icon = '<img src="'.get_option('wpesd-shipping-icon', plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png').'" atr="Image">';
+                            $wpesd_shipping_checkIcon = (!empty(get_option('wpesd-shipping-icon',plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png')))?$wpesd_shipping_icon:'';
                             if(get_option('wpesd-notice-position') == 'bottom'){ 
-                            echo '<div class="show_plus_day_date estimass-style">' . esc_html__($Estimated_message_text).'<span class="estimdate-style"> '.esc_html__($target_date).'</span></div>';
+                            echo '<div class="show_plus_day_date estimass-style">' .$wpesd_shipping_checkIcon.esc_html__($Estimated_message_text).'<span class="estimdate-style"> '.esc_html__($target_date).'</span></div>';
                             echo (!empty($custom_notice_value))?'<div class="show_reason_notice">'.esc_html__($custom_notice_value).'</div>':'';
                             }else{
                                 echo (!empty($custom_notice_value))?'<div class="show_reason_notice">' . esc_html__($custom_notice_value) . '</div>':'';
-                                echo '<div class="show_plus_day_date estimass-style">' . esc_html__($Estimated_message_text).' <span class="estimdate-style">'.esc_html__($target_date) . '</span></div>';
+                                echo '<div class="show_plus_day_date estimass-style">' .$wpesd_shipping_checkIcon.esc_html__($Estimated_message_text).' <span class="estimdate-style">'.esc_html__($target_date) . '</span></div>';
                             }
                         }
                     }
@@ -266,11 +283,9 @@ class ClassProdWPESD {
                 }
             }
         }
-        }
     }
 
     public function wpesd_cart_page($cart_item){
-        if(get_option( 'wpesd-check-products-taxo-widget', 'off' ) == true){
         $wpesd_each_id = $cart_item['product_id'];
         $args = array(
             'post_type'      => 'product',
@@ -283,19 +298,21 @@ class ClassProdWPESD {
                 $custom_checkbox_value = get_post_meta($product_id, '_custom_checkbox', true);
                 $custom_number_value = get_post_meta($product_id, '_custom_number', true);
                 $custom_notice_value = get_post_meta($product_id, '_custom_notice', true);
-                $Estimated_message_text = get_option('wpesd-product-shipted', 'This product will be shipped in ');
+                $Estimated_message_text = get_option('wpesd-product-shipted', 'This product will be shipped on ');
                 if ($custom_checkbox_value === 'yes') {
                 echo '<div class="show_/_">';
                     if ($custom_number_value !== '') {
                         $today = new \DateTime();
                         $target_date = $today->modify("+$custom_number_value days")->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y'));
                         if($product_id == $wpesd_each_id){
+                            $wpesd_shipping_icon = '<img src="'.get_option('wpesd-shipping-icon', plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png').'" atr="Image">';
+                            $wpesd_shipping_checkIcon = (!empty(get_option('wpesd-shipping-icon',plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png')))?$wpesd_shipping_icon:'';
                             if(get_option('wpesd-notice-position') == 'bottom'){ 
-                            echo '<div class="show_plus_day_date estimass-style">' . esc_html__($Estimated_message_text).'<span class="estimdate-style"> '.esc_html__($target_date).'</span></div>';
+                            echo '<div class="show_plus_day_date estimass-style">' .$wpesd_shipping_checkIcon.esc_html__($Estimated_message_text).'<span class="estimdate-style"> '.esc_html__($target_date).'</span></div>';
                             echo (!empty($custom_notice_value))?'<div class="show_reason_notice">'.esc_html__($custom_notice_value).'</div>':'';
                             }else{
                                 echo (!empty($custom_notice_value))?'<div class="show_reason_notice">' . esc_html__($custom_notice_value) . '</div>':'';
-                                echo '<div class="show_plus_day_date estimass-style">' . esc_html__($Estimated_message_text).' <span class="estimdate-style">'.esc_html__($target_date) . '</span></div>';
+                                echo '<div class="show_plus_day_date estimass-style">' .$wpesd_shipping_checkIcon.esc_html__($Estimated_message_text).' <span class="estimdate-style">'.esc_html__($target_date) . '</span></div>';
                             }
                         }
                     }
@@ -303,11 +320,9 @@ class ClassProdWPESD {
                 }
             }
         }
-        }
     }
 
     public function wpesd_thankyou_page($order_id) {
-        if(get_option( 'wpesd-check-products-taxo-widget', 'off' ) == true){
         $args = array(
             'post_type'      => 'product',
             'posts_per_page' => -1,
@@ -315,7 +330,7 @@ class ClassProdWPESD {
         $products = get_posts($args);
         
         $highest_custom_number_value = 0;
-        
+        $highest_custom_number_product_id = 0;
         if (!empty($products)) {
             foreach ($products as $product) {
                 $product_id = $product->ID;
@@ -323,51 +338,83 @@ class ClassProdWPESD {
         
                 if ($custom_number_value > $highest_custom_number_value) {
                     $highest_custom_number_value = $custom_number_value;
+                    $highest_custom_number_product_id = $product_id;
                 }
             }
         }
+        // For all product date check with id (8949384KJGK876) start
+        $order_id = get_query_var('order-received');
+        $order = wc_get_order($order_id);
+    
+        $items = $order->get_items();
+        $product_ids = array();
+    
+        foreach ($items as $item) {
+            $product_id = $item->get_product_id();
+            $product_ids[] = $product_id;
+        }
+        //  (8949384KJGK876) end
         $wpesd_thankyou_page_check = get_option( 'wpesd-thankyou-page-check', 'on' );
         $wpesd_orderdate_thankyou_page_check = get_option('wpesd-orderdate-thankyou-page-check', 'off');
         if($wpesd_thankyou_page_check == true){
             $order = wc_get_order($order_id);
             if ($order && $order->get_date_created()) {
-                $order_date = $order->get_date_created();
-                echo ($wpesd_orderdate_thankyou_page_check == true)?'<div class="show_/_ estimass-style">Order Date: <span class="estimdate-style">' . $order_date->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y')) . '</span></div>':'';
-                $new_date = clone $order_date;
-                $new_date->modify("+$highest_custom_number_value days");
-                echo '<div class="show_/_ estimass-style">' . esc_html(get_option('wpesd-product-shipted', 'This product will be shipped in ')) . ' <span class="estimdate-style">' . $new_date->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y')) . '</span></div>';
+                if(in_array($highest_custom_number_product_id, $product_ids)){
+                    $wpesd_shipping_icon = '<img src="'.get_option('wpesd-shipping-icon', plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png').'" atr="Image">';
+                    $wpesd_shipping_checkIcon = (!empty(get_option('wpesd-shipping-icon',plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png')))?$wpesd_shipping_icon:'';
+                    $order_date = $order->get_date_created();
+                    echo ($wpesd_orderdate_thankyou_page_check == true)?'<div class="show_/_ estimass-style">'.esc_html('Order Date: ').'<span class="estimdate-style">' . $order_date->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y')) . '</span></div>':'';
+                    $new_date = clone $order_date;
+                    $new_date->modify("+$highest_custom_number_value days");
+                    echo '<div class="show_/_ estimass-style">' .$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')) . ' <span class="estimdate-style">' . $new_date->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y')) . '</span></div>';
+                } 
             } 
         } 
-        } 
+
+
+        
     }
 
     public function wpesd_checkout_page($order_id) {
-        if(get_option( 'wpesd-check-products-taxo-widget', 'off' ) == true){
         $args = array(
             'post_type'      => 'product',
             'posts_per_page' => -1,
         );
         $products = get_posts($args);
         $highest_custom_number_value = 0;
+        $highest_custom_number_product_id = 0;
         if (!empty($products)) {
             foreach ($products as $product) {
                 $product_id = $product->ID;
                 $custom_number_value = get_post_meta($product_id, '_custom_number', true);
-        
                 if ($custom_number_value > $highest_custom_number_value) {
                     $highest_custom_number_value = $custom_number_value;
+                    $highest_custom_number_product_id = $product_id;
                 }
+            }
+        }
+        if (function_exists('WC')) {// for all products id in checkout page
+            $cart = WC()->cart;
+            $items = $cart->get_cart();
+            $product_ids = array();
+            foreach ($items as $item) {
+                $product_id = $item['product_id'];
+                $product_ids[] = $product_id;
             }
         }
         $wpesd_checkout_page_check = get_option( 'wpesd-checkout-page-check', 'off' );
         if($wpesd_checkout_page_check == true){
+            $wpesd_shipping_icon = '<img src="'.get_option('wpesd-shipping-icon', plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png').'" atr="Image">';
+                            $wpesd_shipping_checkIcon = (!empty(get_option('wpesd-shipping-icon',plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png')))?$wpesd_shipping_icon:'';
             if (is_checkout() && !isset($_GET['order-received'])) {
-                $etoday = new \DateTime();
-                $etarget_date = $etoday->modify("+$highest_custom_number_value days")->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y'));
-                echo '<div class="show_/_ estimass-style">'.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped in ')).' <span class="estimdate-style">'.$etarget_date . '</span></div>';
+                if(in_array($highest_custom_number_product_id, $product_ids)){
+                    $etoday = new \DateTime();
+                    $etarget_date = $etoday->modify("+$highest_custom_number_value days")->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y'));
+                    echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style">'.$etarget_date . '</span></div>';
+                }
             }
         }
-        }
+        
     }
 
     public function add_custom_content_to_order_number_column($columns) {
@@ -424,7 +471,7 @@ class ClassProdWPESD {
                     $product_id = $product->ID;
                     $custom_checkbox_value = get_post_meta($product_id, '_custom_checkbox', true);
                     $custom_number_value = get_post_meta($product_id, '_custom_number', true);
-                    $Estimated_message_text = get_option('wpesd-product-shipted', 'This product will be shipped in ');
+                    $Estimated_message_text = get_option('wpesd-product-shipted', 'This product will be shipped on ');
                     if ($custom_checkbox_value === 'yes') {
                     echo '<div class="wpesd_order_shi_datadm">';
                         if ($custom_number_value !== '') {
@@ -439,6 +486,29 @@ class ClassProdWPESD {
                 }
             }
         }
+    }
+
+    public function custom_email_templates($template, $template_name, $template_path) {
+        if ($template_name == 'emails/email-order-details.php') {
+            $template = plugin_dir_path(__FILE__) . 'woocommerce/emails/email-order-details.php';
+        }
+    
+        return $template;
+    }
+
+    public function include_order_notes_in_email($order_meta, $order, $is_customer_email) {
+        // Include order notes in customer email but not in admin email
+        if ($is_customer_email) {
+            $order_notes = wc_get_order_notes(array(
+                'order_id' => $order->get_id(),
+            ));
+    
+            foreach ($order_notes as $order_note) {
+                $order_meta .= $order_note->content . "\n";
+            }
+        }
+    
+        return $order_meta;
     }
 
 	public function __construct() {
@@ -466,6 +536,9 @@ class ClassProdWPESD {
         add_action('wp_enqueue_scripts', [$this, 'wpesd_all_assets_for_the_public']);
 		add_action('admin_menu', [$this,'wpesd_admin_menu_test']);
         add_action('wp_head', [$this, 'wpesd_taxoes_styles'],99);
+        // Email
+        add_filter('woocommerce_locate_template', [$this, 'custom_email_templates'],10,3);
+        add_filter('woocommerce_email_order_meta', [$this, 'include_order_notes_in_email'],10,3);
 	}
 }
 ClassProdWPESD::instance();

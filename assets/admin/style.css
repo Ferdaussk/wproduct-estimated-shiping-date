@@ -68,27 +68,10 @@ border: 1px solid #ccc;
 padding: 20px;
 }
 
-.toggle-container,
 .select-container {
 margin-bottom: 20px;
 }
 
-.toggle-label {
-display: block;
-font-weight: bold;
-margin-bottom: 8px;
-}
-
-.toggle-switch {
-position: relative;
-display: inline-block;
-width: 60px;
-height: 34px;
-}
-
-.toggle-switch input {
-display: none;
-}
 
 .slider {
 position: absolute;

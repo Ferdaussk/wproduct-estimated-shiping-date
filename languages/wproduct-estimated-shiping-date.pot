@@ -2,9 +2,9 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: AA WProduct Estimated Shiping Date\n"
-"POT-Creation-Date: 2023-09-05 11:06+0600\n"
-"PO-Revision-Date: 2023-09-05 11:06+0600\n"
+"Project-Id-Version: WProduct Estimated Shiping Date\n"
+"POT-Creation-Date: 2023-09-07 12:55+0600\n"
+"PO-Revision-Date: 2023-09-07 12:55+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,119 +21,132 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: dashboard/dashboard-style.php:35
+#: dashboard/dashboard-style.php:39
 msgid "BEST WP DEVELOPER"
 msgstr ""
 
-#: dashboard/dashboard-style.php:46
-msgid "Active"
+#: dashboard/dashboard-style.php:50
+msgid "Reason notice position"
 msgstr ""
 
-#: dashboard/dashboard-style.php:53
-msgid "Reson notice position"
-msgstr ""
-
-#: dashboard/dashboard-style.php:55
+#: dashboard/dashboard-style.php:52
 msgid "Top"
 msgstr ""
 
-#: dashboard/dashboard-style.php:56
+#: dashboard/dashboard-style.php:53
 msgid "Bottom"
 msgstr ""
 
-#: dashboard/dashboard-style.php:60
+#: dashboard/dashboard-style.php:57
 msgid "Estimated Message:"
 msgstr ""
 
-#: dashboard/dashboard-style.php:63
-msgid "Date format:"
+#: dashboard/dashboard-style.php:61
+msgid "Image url:"
+msgstr ""
+
+#: dashboard/dashboard-style.php:65
+msgid "Image size"
 msgstr ""
 
 #: dashboard/dashboard-style.php:68
-msgid "F j, Y => November 6, 2023 "
+msgid "Date format:"
 msgstr ""
 
 #: dashboard/dashboard-style.php:73
-msgid "F, Y => November, 2023"
+msgid "November 6, 2023 "
 msgstr ""
 
 #: dashboard/dashboard-style.php:78
-msgid "M j, Y => Nov 6, 2023"
+msgid "November, 2023"
 msgstr ""
 
 #: dashboard/dashboard-style.php:83
-msgid "Y/m/d => 2023/11/06"
+msgid "Nov 6, 2023"
 msgstr ""
 
 #: dashboard/dashboard-style.php:88
-msgid "Show in chackout page"
+msgid "2023/11/06"
 msgstr ""
 
-#: dashboard/dashboard-style.php:92
-msgid "Show in thankYou Page"
+#: dashboard/dashboard-style.php:93
+msgid "Show in checkout page"
 msgstr ""
 
-#: dashboard/dashboard-style.php:96
-msgid "Show order date in thankYou page"
+#: dashboard/dashboard-style.php:97
+msgid "Show in thank you Page"
 msgstr ""
 
 #: dashboard/dashboard-style.php:101
+msgid "Show order date in thank you page"
+msgstr ""
+
+#: dashboard/dashboard-style.php:105
+msgid "Send date in email"
+msgstr ""
+
+#: dashboard/dashboard-style.php:110
 msgid "Estimated Message"
 msgstr ""
 
-#: dashboard/dashboard-style.php:103 dashboard/dashboard-style.php:128
-#: dashboard/dashboard-style.php:153
+#: dashboard/dashboard-style.php:112 dashboard/dashboard-style.php:141
+#: dashboard/dashboard-style.php:166
 msgid "Color"
 msgstr ""
 
-#: dashboard/dashboard-style.php:107 dashboard/dashboard-style.php:132
-#: dashboard/dashboard-style.php:157
-msgid "Font size"
-msgstr ""
-
-#: dashboard/dashboard-style.php:111 dashboard/dashboard-style.php:136
-#: dashboard/dashboard-style.php:161
-msgid "Font weight"
-msgstr ""
-
-#: dashboard/dashboard-style.php:115 dashboard/dashboard-style.php:140
-#: dashboard/dashboard-style.php:165
-msgid "Font family"
-msgstr ""
-
-#: dashboard/dashboard-style.php:117 dashboard/dashboard-style.php:142
-#: dashboard/dashboard-style.php:167
-msgid "Roboto - Sans-serif"
-msgstr ""
-
-#: dashboard/dashboard-style.php:118 dashboard/dashboard-style.php:143
-#: dashboard/dashboard-style.php:168
-msgid "Open Sans - Sans-serif"
-msgstr ""
-
-#: dashboard/dashboard-style.php:119 dashboard/dashboard-style.php:144
-#: dashboard/dashboard-style.php:169
-msgid "Lato - Sans-serif"
+#: dashboard/dashboard-style.php:116
+msgid "BG"
 msgstr ""
 
 #: dashboard/dashboard-style.php:120 dashboard/dashboard-style.php:145
 #: dashboard/dashboard-style.php:170
+msgid "Font size"
+msgstr ""
+
+#: dashboard/dashboard-style.php:124 dashboard/dashboard-style.php:149
+#: dashboard/dashboard-style.php:174
+msgid "Font weight"
+msgstr ""
+
+#: dashboard/dashboard-style.php:128 dashboard/dashboard-style.php:153
+#: dashboard/dashboard-style.php:178
+msgid "Font family"
+msgstr ""
+
+#: dashboard/dashboard-style.php:130 dashboard/dashboard-style.php:155
+#: dashboard/dashboard-style.php:180
+msgid "Roboto - Sans-serif"
+msgstr ""
+
+#: dashboard/dashboard-style.php:131 dashboard/dashboard-style.php:156
+#: dashboard/dashboard-style.php:181
+msgid "Open Sans - Sans-serif"
+msgstr ""
+
+#: dashboard/dashboard-style.php:132 dashboard/dashboard-style.php:157
+#: dashboard/dashboard-style.php:182
+msgid "Lato - Sans-serif"
+msgstr ""
+
+#: dashboard/dashboard-style.php:133 dashboard/dashboard-style.php:158
+#: dashboard/dashboard-style.php:183
 msgid "Montserrat - Sans-serif"
 msgstr ""
 
-#: dashboard/dashboard-style.php:121 dashboard/dashboard-style.php:146
-#: dashboard/dashboard-style.php:171
+#: dashboard/dashboard-style.php:134 dashboard/dashboard-style.php:159
+#: dashboard/dashboard-style.php:184
 msgid "Nunito - Sans-serif"
 msgstr ""
 
-#: dashboard/dashboard-style.php:126
+#: dashboard/dashboard-style.php:139
 msgid "Date"
 msgstr ""
 
-#: dashboard/dashboard-style.php:151
-msgid "Reson"
+#: dashboard/dashboard-style.php:164
+msgid "Reason"
 msgstr ""
 
+#. Plugin Name of the plugin/theme
 #: dashboard/requires-check.php:18 dashboard/requires-check.php:25
 #: inc/requires-check.php:18 inc/requires-check.php:25
 #: wproduct-estimated-shiping-date.php:70
@@ -156,47 +169,47 @@ msgstr ""
 msgid "Install WooCommerce"
 msgstr ""
 
-#: prod-ready.php:130
+#: prod-ready.php:144
 msgid "Settings"
 msgstr ""
 
-#: prod-ready.php:138
+#: prod-ready.php:152
 msgid "Product estimated date"
 msgstr ""
 
-#: prod-ready.php:153
+#: prod-ready.php:167
 msgid "Estimated date"
 msgstr ""
 
-#: prod-ready.php:154
+#: prod-ready.php:168
 msgid "Show estimated date for this product."
 msgstr ""
 
-#: prod-ready.php:162
+#: prod-ready.php:176
 msgid "Day number"
 msgstr ""
 
-#: prod-ready.php:163
+#: prod-ready.php:177
 msgid "Enter estimated day"
 msgstr ""
 
-#: prod-ready.php:175
-msgid "Reson notice"
+#: prod-ready.php:189
+msgid "Reason notice"
 msgstr ""
 
-#: prod-ready.php:176
-msgid "Enter reson. If don't have empty this."
+#: prod-ready.php:190
+msgid "Enter reason. If don't have empty this."
 msgstr ""
 
-#: prod-ready.php:375
+#: prod-ready.php:415
 msgid "Order Number"
 msgstr ""
 
-#: prod-ready.php:411
+#: prod-ready.php:451
 msgid "Product Name"
 msgstr ""
 
-#: prod-ready.php:435
+#: prod-ready.php:475
 msgid " "
 msgstr ""
 
@@ -214,19 +227,14 @@ msgstr ""
 msgid "%1$s"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-msgid "AA WProduct Estimated Shiping Date"
-msgstr ""
-
 #. Plugin URI of the plugin/theme
 msgid "https://bestwpdeveloper.com/wproduct-estimated-shiping-date/"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"The WProduct Estimated Shiping Date plugin enhances your WooCommerce-powered "
-"online store by seamlessly integrating product taxonomy data into both the "
-"shop page and individual product pages."
+"Add real-time estimated shipping dates to your WooCommerce store, keeping "
+"your customers informed and satisfied with accurate delivery predictions."
 msgstr ""
 
 #. Author of the plugin/theme

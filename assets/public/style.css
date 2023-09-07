@@ -1,3 +1,13 @@
 .show_\/_ {
-  color: red;
+  color: black;
+}
+.show_plus_day_date img, .estimass-style img{
+  width: 40px;
+  margin-right: 10px;
+}
+.show_plus_day_date.estimass-style, .estimass-style, .show_reason_notice {
+  background-color: #ffb657;
+  padding: 10px;
+  border-radius: 3px;
+  margin: 4px;
 }

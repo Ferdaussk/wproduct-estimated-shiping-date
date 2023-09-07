@@ -7,6 +7,41 @@ add_settings_field(
   'wpesd-plugin-main-menu',
   'wpesd-plugin-switch-section'
 );
+add_settings_field(
+  'wpesd-notice-position',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-product-shipted',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-shipimg-check',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-shipping-icon',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-check-pagechack-taxo-widget',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
 // Taxos label check
 add_settings_field(
   'wpesd-checkout-page-check',
@@ -33,6 +68,13 @@ add_settings_field(
 // *** estimass
 add_settings_field(
   'wpesd-estimass-color',
+  '',
+  'wpesd_plugin_function_for_datas_callback',
+  'wpesd-plugin-main-menu',
+  'wpesd-plugin-switch-section'
+);
+add_settings_field(
+  'wpesd-estimass-bgcolor',
   '',
   'wpesd_plugin_function_for_datas_callback',
   'wpesd-plugin-main-menu',
@@ -122,6 +164,26 @@ register_setting(
   'wpesd-plugin-settings', 
   'wpesd-check-products-taxo-widget' 
 );
+register_setting(
+  'wpesd-plugin-settings', 
+  'wpesd-notice-position' 
+);
+register_setting(
+  'wpesd-plugin-settings', 
+  'wpesd-product-shipted' 
+);
+register_setting(
+  'wpesd-plugin-settings', 
+  'wpesd-shipimg-check' 
+);
+register_setting(
+  'wpesd-plugin-settings', 
+  'wpesd-shipping-icon' 
+);
+register_setting(
+  'wpesd-plugin-settings', 
+  'wpesd-check-pagechack-taxo-widget' 
+);
 // Taxos label check
 register_setting(
   'wpesd-plugin-settings', 
@@ -140,6 +202,10 @@ register_setting(
 register_setting(
   'wpesd-plugin-settings',
   'wpesd-estimass-color'
+);
+register_setting(
+  'wpesd-plugin-settings',
+  'wpesd-estimass-bgcolor'
 );
 register_setting(
   'wpesd-plugin-settings',

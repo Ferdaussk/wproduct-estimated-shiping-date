@@ -1,28 +1,31 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
-$wpesd_products_taxo_value = get_option( 'wpesd-check-products-taxo-widget', 'off' );
 // Taxos label check
 $wpesd_checkout_page_check = get_option( 'wpesd-checkout-page-check', 'on' );
 $wpesd_thankyou_page_check = get_option( 'wpesd-thankyou-page-check', 'on' );
 $wpesd_orderdate_thankyou_page_check = get_option( 'wpesd-orderdate-thankyou-page-check', 'off' );
+$wpesd_send_date_email = get_option( 'wpesd-send-date-email', 'on' );
 // Label controls
 // *** estimass
-$wpesd_estimass_color_value = get_option( 'wpesd-estimass-color', 'red' );
-$wpesd_estimass_fontsize_value = get_option( 'wpesd-estimass-fontsize');
+$wpesd_estimass_color_value = get_option( 'wpesd-estimass-color', 'black' );
+$wpesd_estimass_bgcolor_value = get_option( 'wpesd-estimass-bgcolor', '#ffb657' );
+$wpesd_estimass_fontsize_value = get_option( 'wpesd-estimass-fontsize', '20px');
 $wpesd_estimass_fontweight_value = get_option( 'wpesd-estimass-fontweight');
 $wpesd_estimass_fontfamilly_value = get_option( 'wpesd-estimass-fontfamilly', 'roboto' );
 // *** estimdate
-$wpesd_product_shipted_value = get_option( 'wpesd-product-shipted', 'This product will be shipped in ');
+$wpesd_product_shipted_value = get_option( 'wpesd-product-shipted', 'This product will be shipped on ');
+$wpesd_shipping_icon_value = get_option( 'wpesd-shipping-icon', plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png');
+$wpesd_shipimgsize_value = get_option( 'wpesd-shipimgsize-check', '40px');
 $wpesd_notice_position_value = get_option( 'wpesd-notice-position', 'top' );
 $wpesd_pagechack_value = get_option( 'wpesd-check-pagechack-taxo-widget', 'M j, Y' );
 // *** reason
-$wpesd_reason_color_value = get_option( 'wpesd-reason-color', 'red' );
+$wpesd_reason_color_value = get_option( 'wpesd-reason-color', 'black' );
 $wpesd_reason_fontsize_value = get_option( 'wpesd-reason-fontsize', '20px');
 $wpesd_reason_fontweight_value = get_option( 'wpesd-reason-fontweight');
 $wpesd_reason_fontfamilly_value = get_option( 'wpesd-reason-fontfamilly', 'roboto' );
 // *** estimdate
 $wpesd_estimdate_color_value = get_option( 'wpesd-estimdate-color', 'red' );
-$wpesd_estimdate_fontsize_value = get_option( 'wpesd-estimdate-fontsize');
+$wpesd_estimdate_fontsize_value = get_option( 'wpesd-estimdate-fontsize', '20px');
 $wpesd_estimdate_fontweight_value = get_option( 'wpesd-estimdate-fontweight');
 $wpesd_estimdate_fontfamilly_value = get_option( 'wpesd-estimdate-fontfamilly');
 
@@ -43,13 +46,6 @@ $wpesd_estimdate_fontfamilly_value = get_option( 'wpesd-estimdate-fontfamilly');
     </div>
     <div class="section">
       <div class="clmn-wrap first-clm">
-        <div class="toggle-container">
-          <label class="toggle-label"><?php _e('Active', 'wproduct-estimated-shiping-date'); ?></label>
-          <label class="toggle-switch">
-            <input type="checkbox" name="wpesd-check-products-taxo-widget" value="on" <?php echo checked( $wpesd_products_taxo_value, 'on', false ); ?>>
-            <span class="slider"></span>
-          </label>
-        </div>
         <div class="select-container">
           <label for=""><?php _e('Reason notice position', 'wproduct-estimated-shiping-date'); ?></label>
           <select name="wpesd-notice-position">
@@ -59,29 +55,37 @@ $wpesd_estimdate_fontfamilly_value = get_option( 'wpesd-estimdate-fontfamilly');
         </div>
         <div class="select-container emessage-container">
           <label><?php _e('Estimated Message:', 'wproduct-estimated-shiping-date'); ?></label>
-          <?php echo '<input type="text" name="wpesd-product-shipted" id="wpesd-product-shipted" value="'.$wpesd_product_shipted_value.'" title="Text"  placeholder="This product will be shipped in ">';?>
+          <?php echo '<input type="text" name="wpesd-product-shipted" id="wpesd-product-shipted" value="'.$wpesd_product_shipted_value.'" title="Text"  placeholder="This product will be shipped on ">';?>
+        </div>
+        <div class="select-container emessage-container">
+          <label><?php _e('Image url:', 'wproduct-estimated-shiping-date'); ?></label>
+          <?php echo '<input type="text" name="wpesd-shipping-icon" id="wpesd-shipping-icon" value="'.$wpesd_shipping_icon_value.'" title="If don\'t want empty it."  placeholder="Url here">';?>
+        </div>
+        <div class="select-container emessage-container">
+          <label><?php _e('Image size', 'wproduct-estimated-shiping-date'); ?></label>
+          <input type="text" name="wpesd-shipimgsize-check" value="<?php echo $wpesd_shipimgsize_value; ?>" title="If don\'t want empty it."  placeholder="px, %, rem">
         </div>
         <div class="choose-page"><?php _e('Date format:', 'wproduct-estimated-shiping-date'); ?></div>
         <div class="list-container">
           <div class="list-item">
             <input type="radio" name="wpesd-check-pagechack-taxo-widget" value="F j, Y"
             <?php checked(get_option('wpesd-check-pagechack-taxo-widget', 'off'), 'F j, Y'); ?>>
-            <label ><?php _e('F j, Y => November 6, 2023 ', 'wproduct-estimated-shiping-date'); ?></label>
+            <label ><?php _e('November 6, 2023 ', 'wproduct-estimated-shiping-date'); ?></label>
           </div>
           <div class="list-item">
             <input type="radio" name="wpesd-check-pagechack-taxo-widget" value="F, Y"
             <?php checked(get_option('wpesd-check-pagechack-taxo-widget', 'off'), 'F, Y'); ?>>
-            <label ><?php _e('F, Y => November, 2023', 'wproduct-estimated-shiping-date'); ?></label>
+            <label ><?php _e('November, 2023', 'wproduct-estimated-shiping-date'); ?></label>
           </div>
           <div class="list-item">
             <input type="radio" name="wpesd-check-pagechack-taxo-widget" value="M j, Y"
             <?php checked(get_option('wpesd-check-pagechack-taxo-widget', 'off'), 'M j, Y'); ?>>
-            <label ><?php _e('M j, Y => Nov 6, 2023', 'wproduct-estimated-shiping-date'); ?></label>
+            <label ><?php _e('Nov 6, 2023', 'wproduct-estimated-shiping-date'); ?></label>
           </div>
           <div class="list-item">
             <input type="radio" name="wpesd-check-pagechack-taxo-widget" value="Y/m/d"
             <?php checked(get_option('wpesd-check-pagechack-taxo-widget', 'off'), 'Y/m/d'); ?>>
-            <label ><?php _e('Y/m/d => 2023/11/06', 'wproduct-estimated-shiping-date'); ?></label>
+            <label ><?php _e('2023/11/06', 'wproduct-estimated-shiping-date'); ?></label>
           </div>
         </div>
         <div class="list-container wpesd_cmmn_chacthak">
@@ -96,6 +100,10 @@ $wpesd_estimdate_fontfamilly_value = get_option( 'wpesd-estimdate-fontfamilly');
           <input type="checkbox" name="wpesd-orderdate-thankyou-page-check" value="off" <?php echo checked( $wpesd_orderdate_thankyou_page_check, 'off', false ); ?>>
           <label class="checker-switch"><?php _e('Show order date in thank you page', 'wproduct-estimated-shiping-date'); ?></label>
         </div>
+        <div class="list-container wpesd_cmmn_chacthak">
+          <input type="checkbox" name="wpesd-send-date-email" value="on" <?php echo checked( $wpesd_send_date_email, 'on', false ); ?>>
+          <label class="checker-switch"><?php _e('Send date in email', 'wproduct-estimated-shiping-date'); ?></label>
+        </div>
       </div>
       <div class="clmn-wrap secound-clm">
         <div class="control_row">
@@ -103,6 +111,10 @@ $wpesd_estimdate_fontfamilly_value = get_option( 'wpesd-estimdate-fontfamilly');
           <div class="color-control wpesd-style-style">
             <label for=""><?php _e('Color', 'wproduct-estimated-shiping-date');?></label>
             <?php echo '<input type="color" name="wpesd-estimass-color" id="wpesd-estimass-text" value="'.$wpesd_estimass_color_value.'" title="Text">';?>
+          </div>
+          <div class="color-control wpesd-style-style">
+            <label for=""><?php _e('BG', 'wproduct-estimated-shiping-date');?></label>
+            <?php echo '<input type="color" name="wpesd-estimass-bgcolor" id="wpesd-estimass-text" value="'.$wpesd_estimass_bgcolor_value.'" title="Text">';?>
           </div>
           <div class="text-control wpesd-style-style">
             <label for=""><?php _e('Font size', 'wproduct-estimated-shiping-date');?></label>
