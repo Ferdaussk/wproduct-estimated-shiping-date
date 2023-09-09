@@ -15,7 +15,7 @@ class ClassProdWPESD {
 
 	public function wpesd_all_assets_for_the_admin(){
         wp_enqueue_style( 'wpesd-order', plugin_dir_url( __FILE__ ) . 'assets/admin/order.css', null, '1.0', 'all' );
-		if (isset($_GET['page']) && $_GET['page'] === 'get-wproduct-estimated-shiping-date') {
+		if (isset($_GET['page']) && $_GET['page'] === 'get-wproduct-estimated-shipping-date') {
             wp_enqueue_script( 'wpesd-script', plugin_dir_url( __FILE__ ) . 'assets/admin/script.js', array('jquery'), '1.0', true );
             $all_css_js_file = array(
                 'wpesd-style' => array('wpesd_path_define'=>WPESD_ASFSK_ASSETS_ADMIN_DIR_FILE . '/style.css'),
@@ -39,10 +39,10 @@ class ClassProdWPESD {
 		if(current_user_can('manage_options')){
 			add_submenu_page(
 				'woocommerce',
-				'WProduct Estimated Shiping Date',
-				'WProduct Estimated Shiping Date',
+				'WProduct Estimated Shipping Date',
+				'WProduct Estimated Shipping Date',
 				'manage_options',
-				'get-wproduct-estimated-shiping-date',
+				'get-wproduct-estimated-shipping-date',
 				array($this, 'wpesd_plugin_submenu_about_plugin_page'),
                 12
 			);
@@ -141,7 +141,7 @@ class ClassProdWPESD {
 
     public function wpesd_settings_plugin_action_link($links, $file) {
         if (plugin_basename(__FILE__) == $file) {
-            $wpesd_settings_link = '<a href="' . admin_url('admin.php?page=get-wproduct-estimated-shiping-date') . '" target="_blank">' . esc_html__('Settings', 'text-domain') . '</a>';
+            $wpesd_settings_link = '<a href="' . admin_url('admin.php?page=get-wproduct-estimated-shipping-date') . '" target="_blank">' . esc_html__('Settings', 'text-domain') . '</a>';
             array_push($links, $wpesd_settings_link);
         }
         return $links;
@@ -149,7 +149,7 @@ class ClassProdWPESD {
 
     public function wpesd_product_data_tabs($tabs){
         $tabs['custom_tab'] = array(
-            'label'    => __('Product estimated date', 'wproduct-estimated-shiping-date'),
+            'label'    => __('Product estimated date', 'wproduct-estimated-shipping-date'),
             'target'   => 'wpesd_product_estimated_date_tab',
             'priority' => 100,
         );
@@ -164,8 +164,8 @@ class ClassProdWPESD {
             woocommerce_wp_checkbox(
                 array(
                     'id'            => '_custom_checkbox',
-                    'label'         => __('Estimated date', 'wproduct-estimated-shiping-date'),
-                    'description'   => __('Show estimated date for this product.', 'wproduct-estimated-shiping-date'),
+                    'label'         => __('Estimated date', 'wproduct-estimated-shipping-date'),
+                    'description'   => __('Show estimated date for this product.', 'wproduct-estimated-shipping-date'),
                     'desc_tip'      => true,
                 )
             );
@@ -173,8 +173,8 @@ class ClassProdWPESD {
             woocommerce_wp_text_input(
                 array(
                     'id'            => '_custom_number',
-                    'label'         => __('Day number', 'wproduct-estimated-shiping-date'),
-                    'placeholder'   => __('Enter estimated day', 'wproduct-estimated-shiping-date'),
+                    'label'         => __('Day number', 'wproduct-estimated-shipping-date'),
+                    'placeholder'   => __('Enter estimated day', 'wproduct-estimated-shipping-date'),
                     'desc_tip'      => true,
                     'type'          => 'number',
                     'custom_attributes' => array(
@@ -186,8 +186,8 @@ class ClassProdWPESD {
             woocommerce_wp_text_input(
                 array(
                     'id'            => '_custom_notice',
-                    'label'         => __('Reason notice', 'wproduct-estimated-shiping-date'),
-                    'placeholder'   => __('Enter reason. If don\'t have empty this.', 'wproduct-estimated-shiping-date'),
+                    'label'         => __('Reason notice', 'wproduct-estimated-shipping-date'),
+                    'placeholder'   => __('Enter reason. If don\'t have empty this.', 'wproduct-estimated-shipping-date'),
                     'desc_tip'      => true,
                     'type'          => 'text',
                     'custom_attributes' => array(
@@ -342,7 +342,7 @@ class ClassProdWPESD {
         if ($largest_custom_number !== null) {
             $etoday = new \DateTime();
             $etarget_date = $etoday->modify("+$largest_custom_number days")->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y'));
-            echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style">'.esc_html__($etarget_date) . '</span></div>';
+            echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style"> '.esc_html__($etarget_date) . '</span></div>';
         } else {
             echo '';
         }
@@ -373,14 +373,14 @@ class ClassProdWPESD {
                 if ($largest_custom_number !== null) {
                     $etoday = new \DateTime();
                     $etarget_date = $etoday->modify("+$largest_custom_number days")->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y'));
-                    echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style">'.esc_html__($etarget_date) . '</span></div>';
+                    echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style"> '.esc_html__($etarget_date) . '</span></div>';
                 }else{echo '';}
             }
         }
     }
 
     public function add_custom_content_to_order_number_column($columns) {
-        $columns['order_number'] = __('Order Number', 'wproduct-estimated-shiping-date');
+        $columns['order_number'] = __('Order Number', 'wproduct-estimated-shipping-date');
         return $columns;
     }
     
@@ -409,14 +409,14 @@ class ClassProdWPESD {
                 $order_date = $order->get_date_created();
                 $new_date = clone $order_date;
                 $new_date->modify("+$highest_custom_number_value days");
-                echo '<div class="show_/_ wpesd_order_shi_datadm">'.esc_html__('This order will be shipped on ') . $new_date->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y')) . '</div>';
+                echo '<div class="show_/_ wpesd_order_shi_datadm">'.esc_html__('This order will be shipped in ') . $new_date->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y')) . '</div>';
             } 
         }
     }
 
     // This for the all products page VVVVV
     public function add_custom_content_to_product_name_column($columns) {
-        $columns['name'] = __('Product Name', 'wproduct-estimated-shiping-date');
+        $columns['name'] = __('Product Name', 'wproduct-estimated-shipping-date');
         return $columns;
     }
 

@@ -113,7 +113,7 @@ if($wpesd_email_check == true){
                 $wpesd_shipping_checkIcon = (!empty(get_option('wpesd-shipping-icon',plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png')))?$wpesd_shipping_icon:'';	
                 $etoday = new \DateTime();
                 $etarget_date = $etoday->modify("+$largest_custom_number days")->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y'));
-                echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style" style="color:'.get_option( 'wpesd-estimdate-color', 'red' ).';font-size: 15px;">'.esc_html__($etarget_date) . '</span></div>';
+                echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style" style="color:'.get_option( 'wpesd-estimdate-color', 'red' ).';font-size: 15px;"> '.esc_html__($etarget_date) . '</span></div>';
                 ?>
             </td>
         </tr>

@@ -9,18 +9,18 @@
  *
  * @link              https://bestwpdeveloper.com
  * @since             1.0
- * @package           WProduct_Estimated_Shiping_Date
+ * @package           WProduct_Estimated_Shipping_Date
  *
  * @wordpress-plugin
- * Plugin Name:       WProduct Estimated Shiping Date
- * Plugin URI:        https://bestwpdeveloper.com/wproduct-estimated-shiping-date/
+ * Plugin Name:       WProduct Estimated Shipping Date
+ * Plugin URI:        https://bestwpdeveloper.com/wproduct-estimated-shipping-date/
  * Description:       Add real-time estimated shipping dates to your WooCommerce store, keeping your customers informed and satisfied with accurate delivery predictions.
  * Version:           1.0
  * Author:            Best WP Developer
  * Author URI:        https://bestwpdeveloper.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       wproduct-estimated-shiping-date
+ * Text Domain:       wproduct-estimated-shipping-date
  * Domain Path:       /languages
  */
 
@@ -46,7 +46,7 @@ final class FinalWPESDShop{
 	}
 
 	public function wpesd_loaded_textdomain() {
-		load_plugin_textdomain( 'wproduct-estimated-shiping-date', false, basename(dirname(__FILE__)).'/languages' );
+		load_plugin_textdomain( 'wproduct-estimated-shipping-date', false, basename(dirname(__FILE__)).'/languages' );
 	}
 
 	public function wpesd_init() {
@@ -66,13 +66,13 @@ final class FinalWPESDShop{
 		}
 
 		$message = sprintf(
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'wproduct-estimated-shiping-date' ),
-			'<strong>' . esc_html__( 'WProduct Estimated Shiping Date', 'wproduct-estimated-shiping-date' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'wproduct-estimated-shiping-date' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'wproduct-estimated-shipping-date' ),
+			'<strong>' . esc_html__( 'WProduct Estimated Shipping Date', 'wproduct-estimated-shipping-date' ) . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'wproduct-estimated-shipping-date' ) . '</strong>',
 			self::MINIMUM_PHP_VERSION
 		);
 
-		printf( '<div class="notice notice-warning is-dismissible"><p>' . esc_html__('%1$s', 'wproduct-estimated-shiping-date') . '</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>' . esc_html__('%1$s', 'wproduct-estimated-shipping-date') . '</p></div>', $message );
 	}
 }
 

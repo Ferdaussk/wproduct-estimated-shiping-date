@@ -2,9 +2,9 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: WProduct Estimated Shiping Date\n"
-"POT-Creation-Date: 2023-09-09 19:10+0600\n"
-"PO-Revision-Date: 2023-09-09 19:10+0600\n"
+"Project-Id-Version: WProduct Estimated Shipping Date\n"
+"POT-Creation-Date: 2023-09-09 19:17+0600\n"
+"PO-Revision-Date: 2023-09-09 19:17+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: wproduct-estimated-shiping-date.php\n"
+"X-Poedit-WPHeader: wproduct-estimated-shipping-date.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -148,8 +148,8 @@ msgstr ""
 
 #. Plugin Name of the plugin/theme
 #: inc/requires-check.php:18 inc/requires-check.php:25
-#: wproduct-estimated-shiping-date.php:70
-msgid "WProduct Estimated Shiping Date"
+#: wproduct-estimated-shipping-date.php:70
+msgid "WProduct Estimated Shipping Date"
 msgstr ""
 
 #: inc/requires-check.php:18
@@ -205,7 +205,7 @@ msgid "Order Number"
 msgstr ""
 
 #: prod-ready.php:412
-msgid "This order will be shipped on "
+msgid "This order will be shipped in "
 msgstr ""
 
 #: prod-ready.php:419
@@ -248,22 +248,22 @@ msgstr ""
 msgid "Total: "
 msgstr ""
 
-#: wproduct-estimated-shiping-date.php:69
+#: wproduct-estimated-shipping-date.php:69
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
 msgstr ""
 
-#: wproduct-estimated-shiping-date.php:71
+#: wproduct-estimated-shipping-date.php:71
 msgid "PHP"
 msgstr ""
 
-#: wproduct-estimated-shiping-date.php:75
+#: wproduct-estimated-shipping-date.php:75
 #, php-format
 msgid "%1$s"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://bestwpdeveloper.com/wproduct-estimated-shiping-date/"
+msgid "https://bestwpdeveloper.com/wproduct-estimated-shipping-date/"
 msgstr ""
 
 #. Description of the plugin/theme
