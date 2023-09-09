@@ -16,10 +16,10 @@ if (!defined('ABSPATH')) {
     <table style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif" width="100%">
         <thead>
             <tr>
-                <th scope="col" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html('Product'); ?></th>
-                <th scope="col" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html('Quantity'); ?></th>
-                <th scope="col" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html('Per Price'); ?></th>
-                <th scope="col" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html('Price'); ?></th>
+                <th scope="col" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html__('Product'); ?></th>
+                <th scope="col" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html__('Quantity'); ?></th>
+                <th scope="col" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html__('Per Price'); ?></th>
+                <th scope="col" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html__('Price'); ?></th>
             </tr>
         </thead>
         <tbody>
@@ -40,10 +40,10 @@ if (!defined('ABSPATH')) {
                         <?php echo esc_html__($quantity); ?>
                     </td>
                     <td style="color: #636363; border: 1px solid #fbdc0e; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif" align="left">
-                        <span><?php echo $product_price; ?></span>
+                        <?php echo __($product_price); ?>
                     </td>
                     <td style="color: #636363; border: 1px solid #fbdc0e; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif" align="left">
-                        <span><?php echo $line_total; ?></span>
+                        <?php echo __($line_total); ?>
                     </td>
                 </tr>
             <?php
@@ -52,16 +52,16 @@ if (!defined('ABSPATH')) {
         </tbody>
         <tfoot>
             <tr>
-                <th scope="row" colspan="3" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left; border-top-width: 4px" align="left"><?php echo esc_html('Subtotal: '); ?></th>
+                <th scope="row" colspan="3" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left; border-top-width: 4px" align="left"><?php echo esc_html__('Subtotal: '); ?></th>
                 <td style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left; border-top-width: 4px" align="left">
-                    <span><?php echo wc_price($order->get_subtotal()); ?></span>
+                    <?php echo wc_price($order->get_subtotal()); ?>
                 </td>
             </tr>
             <?php
             if ($order->get_shipping_total()) {
             ?>
                 <tr>
-                    <th scope="row" colspan="3" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html('Shipping: '); ?></th>
+                    <th scope="row" colspan="3" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html__('Shipping: '); ?></th>
                     <td style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left">
                         <?php echo wc_price($order->get_shipping_total()); ?>
                     </td>
@@ -70,15 +70,15 @@ if (!defined('ABSPATH')) {
             }
             ?>
             <tr>
-                <th scope="row" colspan="3" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left;" align="left"><?php echo esc_html('Payment Method: '); ?></th>
+                <th scope="row" colspan="3" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left;" align="left"><?php echo esc_html__('Payment Method: '); ?></th>
                 <td style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left;" align="left">
-                    <span><?php echo esc_html($order->get_payment_method_title()); ?></span>
+                    <?php echo esc_html($order->get_payment_method_title()); ?>
                 </td>
             </tr>
             <tr>
-                <th scope="row" colspan="3" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html('Total: '); ?></th>
+                <th scope="row" colspan="3" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html__('Total: '); ?></th>
                 <td style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left">
-                    <span><?php echo wc_price($order->get_total()); ?></span>
+                    <?php echo wc_price($order->get_total()); ?>
                 </td>
             </tr>
         </tfoot>
@@ -113,7 +113,7 @@ if($wpesd_email_check == true){
                 $wpesd_shipping_checkIcon = (!empty(get_option('wpesd-shipping-icon',plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png')))?$wpesd_shipping_icon:'';	
                 $etoday = new \DateTime();
                 $etarget_date = $etoday->modify("+$largest_custom_number days")->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y'));
-                echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style" style="color:'.get_option( 'wpesd-estimdate-color', 'red' ).';font-size: 15px;">'.$etarget_date . '</span></div>';
+                echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style" style="color:'.get_option( 'wpesd-estimdate-color', 'red' ).';font-size: 15px;">'.esc_html__($etarget_date) . '</span></div>';
                 ?>
             </td>
         </tr>

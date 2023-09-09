@@ -342,7 +342,7 @@ class ClassProdWPESD {
         if ($largest_custom_number !== null) {
             $etoday = new \DateTime();
             $etarget_date = $etoday->modify("+$largest_custom_number days")->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y'));
-            echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style">'.$etarget_date . '</span></div>';
+            echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style">'.esc_html__($etarget_date) . '</span></div>';
         } else {
             echo '';
         }
@@ -373,14 +373,14 @@ class ClassProdWPESD {
                 if ($largest_custom_number !== null) {
                     $etoday = new \DateTime();
                     $etarget_date = $etoday->modify("+$largest_custom_number days")->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y'));
-                    echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style">'.$etarget_date . '</span></div>';
+                    echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style">'.esc_html__($etarget_date) . '</span></div>';
                 }else{echo '';}
             }
         }
     }
 
     public function add_custom_content_to_order_number_column($columns) {
-        $columns['order_number'] = __('Order Number', 'textdomain');
+        $columns['order_number'] = __('Order Number', 'wproduct-estimated-shiping-date');
         return $columns;
     }
     
@@ -409,7 +409,7 @@ class ClassProdWPESD {
                 $order_date = $order->get_date_created();
                 $new_date = clone $order_date;
                 $new_date->modify("+$highest_custom_number_value days");
-                echo '<div class="show_/_ wpesd_order_shi_datadm">'.esc_html('This order will be shipped in ') . $new_date->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y')) . '</div>';
+                echo '<div class="show_/_ wpesd_order_shi_datadm">'.esc_html__('This order will be shipped on ') . $new_date->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y')) . '</div>';
             } 
         }
     }

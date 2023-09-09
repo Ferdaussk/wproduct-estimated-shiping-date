@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WProduct Estimated Shiping Date\n"
-"POT-Creation-Date: 2023-09-07 12:55+0600\n"
-"PO-Revision-Date: 2023-09-07 12:55+0600\n"
+"POT-Creation-Date: 2023-09-09 19:10+0600\n"
+"PO-Revision-Date: 2023-09-09 19:10+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -147,25 +147,24 @@ msgid "Reason"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: dashboard/requires-check.php:18 dashboard/requires-check.php:25
 #: inc/requires-check.php:18 inc/requires-check.php:25
 #: wproduct-estimated-shiping-date.php:70
 msgid "WProduct Estimated Shiping Date"
 msgstr ""
 
-#: dashboard/requires-check.php:18 inc/requires-check.php:18
+#: inc/requires-check.php:18
 msgid "requires WooCommerce to be activated."
 msgstr ""
 
-#: dashboard/requires-check.php:19 inc/requires-check.php:19
+#: inc/requires-check.php:19
 msgid "Activate WooCommerce"
 msgstr ""
 
-#: dashboard/requires-check.php:25 inc/requires-check.php:25
+#: inc/requires-check.php:25
 msgid "requires WooCommerce to be installed and activated."
 msgstr ""
 
-#: dashboard/requires-check.php:26 inc/requires-check.php:26
+#: inc/requires-check.php:26
 msgid "Install WooCommerce"
 msgstr ""
 
@@ -201,16 +200,52 @@ msgstr ""
 msgid "Enter reason. If don't have empty this."
 msgstr ""
 
-#: prod-ready.php:415
+#: prod-ready.php:383
 msgid "Order Number"
 msgstr ""
 
-#: prod-ready.php:451
+#: prod-ready.php:412
+msgid "This order will be shipped on "
+msgstr ""
+
+#: prod-ready.php:419
 msgid "Product Name"
 msgstr ""
 
-#: prod-ready.php:475
+#: prod-ready.php:443
 msgid " "
+msgstr ""
+
+#: woocommerce/emails/email-order-details.php:19
+msgid "Product"
+msgstr ""
+
+#: woocommerce/emails/email-order-details.php:20
+msgid "Quantity"
+msgstr ""
+
+#: woocommerce/emails/email-order-details.php:21
+msgid "Per Price"
+msgstr ""
+
+#: woocommerce/emails/email-order-details.php:22
+msgid "Price"
+msgstr ""
+
+#: woocommerce/emails/email-order-details.php:55
+msgid "Subtotal: "
+msgstr ""
+
+#: woocommerce/emails/email-order-details.php:64
+msgid "Shipping: "
+msgstr ""
+
+#: woocommerce/emails/email-order-details.php:73
+msgid "Payment Method: "
+msgstr ""
+
+#: woocommerce/emails/email-order-details.php:79
+msgid "Total: "
 msgstr ""
 
 #: wproduct-estimated-shiping-date.php:69
