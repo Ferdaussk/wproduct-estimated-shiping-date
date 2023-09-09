@@ -330,7 +330,7 @@ class ClassProdWPESD {
         $products = get_posts($args);
         
         $highest_custom_number_value = 0;
-        $highest_custom_number_product_id = 0;
+        // $highest_custom_number_product_id = 0;
         if (!empty($products)) {
             foreach ($products as $product) {
                 $product_id = $product->ID;
@@ -338,7 +338,7 @@ class ClassProdWPESD {
         
                 if ($custom_number_value > $highest_custom_number_value) {
                     $highest_custom_number_value = $custom_number_value;
-                    $highest_custom_number_product_id = $product_id;
+                    // $highest_custom_number_product_id = $product_id;
                 }
             }
         }
@@ -359,7 +359,7 @@ class ClassProdWPESD {
         if($wpesd_thankyou_page_check == true){
             $order = wc_get_order($order_id);
             if ($order && $order->get_date_created()) {
-                if(in_array($highest_custom_number_product_id, $product_ids)){
+                //if(in_array($highest_custom_number_product_id, $product_ids)){
                     $wpesd_shipping_icon = '<img src="'.get_option('wpesd-shipping-icon', plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png').'" atr="Image">';
                     $wpesd_shipping_checkIcon = (!empty(get_option('wpesd-shipping-icon',plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png')))?$wpesd_shipping_icon:'';
                     $order_date = $order->get_date_created();
@@ -367,7 +367,7 @@ class ClassProdWPESD {
                     $new_date = clone $order_date;
                     $new_date->modify("+$highest_custom_number_value days");
                     echo '<div class="show_/_ estimass-style">' .$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')) . ' <span class="estimdate-style">' . $new_date->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y')) . '</span></div>';
-                } 
+                //} 
             } 
         } 
 
@@ -382,14 +382,14 @@ class ClassProdWPESD {
         );
         $products = get_posts($args);
         $highest_custom_number_value = 0;
-        $highest_custom_number_product_id = 0;
+        //$highest_custom_number_product_id = 0;
         if (!empty($products)) {
             foreach ($products as $product) {
                 $product_id = $product->ID;
                 $custom_number_value = get_post_meta($product_id, '_custom_number', true);
                 if ($custom_number_value > $highest_custom_number_value) {
                     $highest_custom_number_value = $custom_number_value;
-                    $highest_custom_number_product_id = $product_id;
+                    //$highest_custom_number_product_id = $product_id;
                 }
             }
         }
@@ -405,13 +405,13 @@ class ClassProdWPESD {
         $wpesd_checkout_page_check = get_option( 'wpesd-checkout-page-check', 'off' );
         if($wpesd_checkout_page_check == true){
             $wpesd_shipping_icon = '<img src="'.get_option('wpesd-shipping-icon', plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png').'" atr="Image">';
-                            $wpesd_shipping_checkIcon = (!empty(get_option('wpesd-shipping-icon',plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png')))?$wpesd_shipping_icon:'';
+            $wpesd_shipping_checkIcon = (!empty(get_option('wpesd-shipping-icon',plugin_dir_url( __FILE__ ) . 'assets/public/shipping.png')))?$wpesd_shipping_icon:'';
             if (is_checkout() && !isset($_GET['order-received'])) {
-                if(in_array($highest_custom_number_product_id, $product_ids)){
+                //if(in_array($highest_custom_number_product_id, $product_ids)){
                     $etoday = new \DateTime();
                     $etarget_date = $etoday->modify("+$highest_custom_number_value days")->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y'));
                     echo '<div class="show_/_ estimass-style">'.$wpesd_shipping_checkIcon.esc_html(get_option('wpesd-product-shipted', 'This product will be shipped on ')).' <span class="estimdate-style">'.$etarget_date . '</span></div>';
-                }
+                //}
             }
         }
         
@@ -488,6 +488,7 @@ class ClassProdWPESD {
         }
     }
 
+    // For email sender
     public function custom_email_templates($template, $template_name, $template_path) {
         if ($template_name == 'emails/email-order-details.php') {
             $template = plugin_dir_path(__FILE__) . 'woocommerce/emails/email-order-details.php';
