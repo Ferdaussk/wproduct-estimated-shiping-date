@@ -385,33 +385,29 @@ class ClassProdWPESD {
     }
     
     public function display_custom_content_in_order_number_column($column, $post_id) {
-        if ($column === 'order_number') {
-            $args = array(
-                'post_type'      => 'product',
-                'posts_per_page' => -1,
-            );
-            $products = get_posts($args);
-            
-            $highest_custom_number_value = 0;
-            
-            if (!empty($products)) {
-                foreach ($products as $product) {
-                    $product_id = $product->ID;
-                    $custom_number_value = get_post_meta($product_id, '_custom_number', true);
-            
-                    if ($custom_number_value > $highest_custom_number_value) {
-                        $highest_custom_number_value = $custom_number_value;
-                    }
+        if ($column == 'order_number') {
+            $order = wc_get_order($post_id);
+            $items = $order->get_items();
+            $largest_custom_number = null;
+    
+            foreach ($items as $item) {
+                $product_id = $item->get_product_id();
+                $custom_number_value = get_post_meta($product_id, '_custom_number', true);
+    
+                if ($custom_number_value !== '' && $custom_number_value > $largest_custom_number) {
+                    $largest_custom_number = $custom_number_value;
                 }
             }
-            $order = wc_get_order($post_id);
-            if ($order && $order->get_date_created()) {
-                $order_date = $order->get_date_created();
-                $new_date = clone $order_date;
-                $new_date->modify("+$highest_custom_number_value days");
-                echo '<div class="show_/_ wpesd_order_shi_datadm">'.esc_html__('This order will be shipped in ') . $new_date->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y')) . '</div>';
-            } 
-        }
+            if($largest_custom_number !== null) {
+                $order = wc_get_order($post_id);
+                if ($order && $order->get_date_created()) {
+                    $order_date = $order->get_date_created();
+                    $new_date = clone $order_date;
+                    $new_date->modify("+$largest_custom_number days");
+                    echo '<div class="show_/_ wpesd_order_shi_datadm">'.esc_html__('This order will be shipped on ') . $new_date->format(get_option('wpesd-check-pagechack-taxo-widget', 'M j, Y')) . '</div>';
+                } 
+            }
+        } 
     }
 
     // This for the all products page VVVVV
