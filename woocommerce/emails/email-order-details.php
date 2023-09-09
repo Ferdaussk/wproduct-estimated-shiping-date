@@ -11,22 +11,81 @@
 if (!defined('ABSPATH')) {
     exit;
 }
+?>
+<div style="margin-bottom: 40px">
+    <table style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif" width="100%">
+        <thead>
+            <tr>
+                <th scope="col" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html('Product'); ?></th>
+                <th scope="col" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html('Quantity'); ?></th>
+                <th scope="col" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html('Per Price'); ?></th>
+                <th scope="col" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html('Price'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            foreach ($order->get_items() as $item_id => $item) :
+                $product = $item->get_product();
+                $product_name = $product->get_name();
+                $quantity = $item->get_quantity();
+                $product_price = wc_price($product->get_price());
+                $line_total = wc_price($product->get_price() * $quantity); // Calculate the line total
 
-// For product name
-foreach ($order->get_items() as $item_id => $item) :
-    $product = $item->get_product();
-    $product_id = $product->get_id();
-    $product_name = $product->get_name();
-    $quantity = $item->get_quantity();
-    
-    // Output the product name and quantity
-    ?>
-    <div class="<?php echo esc_attr(apply_filters('woocommerce_order_item_class', 'order_item', $item, $order)); ?>" style="display: flex; justify-content: space-between; align-items: center; border: 1px solid #e5e5e5; border-radius: 3px; margin: 4px; background-color: #b7b7b7; color: #000000; padding: 10px;">
-        <div style="flex: 1; font-weight: bold;width: 50%;"><?php echo esc_html__('Name: '.$product_name); ?></div>
-        <div style="flex: 1; text-align: left;width: 50%;"><?php echo esc_html__('Quantity: '.$quantity); ?></div>
-    </div>
+                ?>
+                <tr>
+                    <td style="color: #636363; border: 1px solid #fbdc0e; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap: break-word" align="left">
+                        <?php echo esc_html__($product_name); ?>
+                    </td>
+                    <td style="color: #636363; border: 1px solid #fbdc0e; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif" align="left">
+                        <?php echo esc_html__($quantity); ?>
+                    </td>
+                    <td style="color: #636363; border: 1px solid #fbdc0e; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif" align="left">
+                        <span><?php echo $product_price; ?></span>
+                    </td>
+                    <td style="color: #636363; border: 1px solid #fbdc0e; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif" align="left">
+                        <span><?php echo $line_total; ?></span>
+                    </td>
+                </tr>
+            <?php
+            endforeach;
+            ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="3" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left; border-top-width: 4px" align="left"><?php echo esc_html('Subtotal: '); ?></th>
+                <td style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left; border-top-width: 4px" align="left">
+                    <span><?php echo wc_price($order->get_subtotal()); ?></span>
+                </td>
+            </tr>
+            <?php
+            if ($order->get_shipping_total()) {
+            ?>
+                <tr>
+                    <th scope="row" colspan="3" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html('Shipping: '); ?></th>
+                    <td style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left">
+                        <?php echo wc_price($order->get_shipping_total()); ?>
+                    </td>
+                </tr>
+            <?php
+            }
+            ?>
+            <tr>
+                <th scope="row" colspan="3" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left;" align="left"><?php echo esc_html('Payment Method: '); ?></th>
+                <td style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left;" align="left">
+                    <span><?php echo esc_html($order->get_payment_method_title()); ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="3" style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left"><?php echo esc_html('Total: '); ?></th>
+                <td style="color: #636363; border: 1px solid #fbdc0e; vertical-align: middle; padding: 12px; text-align: left" align="left">
+                    <span><?php echo wc_price($order->get_total()); ?></span>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
     <?php
-endforeach;
 
 $wpesd_estimass_bgcolor_value = get_option( 'wpesd-estimass-bgcolor', '#ffb657' );
 if (function_exists('WC')) {// for all products id in checkout page
